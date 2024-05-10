@@ -134,7 +134,6 @@ screenshot
 
 build
 
-**/*/config.yaml
 config.yaml
 
 node_modules/

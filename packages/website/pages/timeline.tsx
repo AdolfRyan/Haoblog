@@ -11,6 +11,8 @@ export interface TimeLinePageProps {
   sortedArticles: Record<string, Article[]>;
   wordTotal: number;
 }
+// 这个文件的主要功能是显示一个时间线页面，页面上的每一项都是一个 TimeLineItem 组件，表示一篇文章
+
 const TimeLine = (props: TimeLinePageProps) => {
   return (
     <Layout

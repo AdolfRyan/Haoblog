@@ -16,6 +16,7 @@ import { SettingProvider } from './provider/setting/setting.provider';
 import { WebsiteProvider } from './provider/website/website.provider';
 import { initJwt } from './utils/initJwt';
 
+//页面入口
 async function bootstrap() {
   const jwtSecret = await initJwt();
   global.jwtSecret = jwtSecret;

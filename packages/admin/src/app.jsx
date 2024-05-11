@@ -20,6 +20,9 @@ export const initialStateConfig = {
 /**
  * @see  https://umijs.org/zh-CN/plugins/plugin-initial-state
  * */
+//用于获取应用的初始状态。它首先尝试获取所有元数据，然后根据返回的状态码进行不同的处理。
+//如果用户未登录或在初始化页面，它会跳过错误处理。它还检查返回的基础URL是否合法，如果不合法，会弹出警告模态框。
+//最后，它检查应用的版本，如果有新版本，会弹出通知
 export async function getInitialState() {
   const fetchInitData = async (option) => {
     try {
@@ -141,6 +144,7 @@ export async function getInitialState() {
   };
 } // ProLayout 支持的api https://procomponents.ant.design/components/layout
 
+//处理窗口大小变化，根据窗口宽度的大小决定是否显示头部布局。
 const handleSizeChange = () => {
   const headerPoint = 768;
   const show = window.innerWidth > headerPoint ? false : true;
@@ -160,7 +164,8 @@ const handleSizeChange = () => {
 };
 
 window.onresize = handleSizeChange;
-
+//函数返回一个对象，定义了应用的布局和一些行为。例如，它定义了右侧内容渲染，页脚渲染，
+//页面改变时的行为，链接，以及子元素的渲染。它还处理了主题切换和设置更改。
 export const layout = ({ initialState, setInitialState }) => {
   handleSizeChange();
   return {
@@ -261,6 +266,8 @@ export const layout = ({ initialState, setInitialState }) => {
     ...initialState?.settings,
   };
 };
+//定义了请求的错误配置和请求拦截器。错误配置中，
+//根据返回的状态码和消息，定义了成功和错误消息。请求拦截器在发送请求前，将token添加到请求头中。
 export const request = {
   errorConfig: {
     adaptor: (resData) => {

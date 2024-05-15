@@ -10,6 +10,7 @@ export interface Config {
   log: string;
 }
 
+//数据库连接配置
 export const loadMongoUrl = () => {
   return loadConfig('database.url', () => {
     const db = {

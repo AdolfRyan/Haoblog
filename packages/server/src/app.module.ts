@@ -85,9 +85,11 @@ import { initJwt } from './utils/initJwt';
 
 @Module({
   imports: [
+    //连接到数据库
     MongooseModule.forRoot(config.mongoUrl, {
       autoIndex: true,
     }),
+    //模型定义
     MongooseModule.forFeature([
       { name: Article.name, schema: ArticleSchema },
       { name: Draft.name, schema: DraftSchema },
@@ -102,6 +104,7 @@ import { initJwt } from './utils/initJwt';
       { name: Category.name, schema: CategorySchema },
       { name: Pipeline.name, schema: PipelineSchema },
     ]),
+    //身份验证和授权机制
     JwtModule.registerAsync({
       useFactory: async () => {
         return {
@@ -112,6 +115,8 @@ import { initJwt } from './utils/initJwt';
         };
       },
     }),
+    //虽然 ScheduleModule.forRoot() 在这段代码中被调用了，但是这并不意味着有定时任务被创建。
+    //具体的定时任务需要在服务中使用 @Cron()，@Interval() 或者 @Timeout() 装饰器来创建。
     ScheduleModule.forRoot(),
   ],
   controllers: [

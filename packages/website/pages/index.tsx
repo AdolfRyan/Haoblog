@@ -23,6 +23,8 @@ const Home = (props: IndexPageProps) => {
       title={props.layoutProps.siteName}
       sideBar={<AuthorCard option={props.authorCardProps}></AuthorCard>}
     >
+      {/* 这个layout界面的所有内容是children作为函数的参数，下面的全是。详情见layout下的参数 */}
+
       {/* 这个Head有什么用？我把他注释掉了页面还是很正常 */}
       <Head>
         <meta

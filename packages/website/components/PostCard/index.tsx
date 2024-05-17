@@ -61,6 +61,7 @@ export default function (props: {
     return false;
   }, [props, lock]);
 
+  // 没加密的话显示前50个字
   const calContent = useMemo(() => {
     if (props.type == "overview") {
       if (props.private) {
@@ -84,6 +85,7 @@ export default function (props: {
   }, [props.type, props.content]);
 
   return (
+    // 这是主页文章的简略显示
     <div className="post-card-wrapper">
       <div
         style={{ position: "relative" }}
@@ -91,6 +93,7 @@ export default function (props: {
         className="overflow-hidden post-card bg-white card-shadow py-4 px-1 sm:px-3 md:py-6 md:px-5 dark:bg-dark  dark:nav-shadow-dark"
       >
         {props.top != 0 && <TopPinIcon></TopPinIcon>}
+        {/* 大标题 */}
         <Title
           type={props.type}
           id={props.id}
@@ -98,7 +101,7 @@ export default function (props: {
           openArticleLinksInNewWindow={props.openArticleLinksInNewWindow}
           showEditButton={props.showEditButton}
         />
-
+        {/* 副标题 */}
         <SubTitle
           openArticleLinksInNewWindow={props.openArticleLinksInNewWindow}
           type={props.type}
@@ -116,6 +119,8 @@ export default function (props: {
               createdAt={props.createdAt}
             ></AlertCard>
           )}
+          {/* 这是个if判断 */}
+          {/* 文章的前几十个字 */}
           {lock ? (
             <UnLockCard
               setLock={setLock}
@@ -129,19 +134,20 @@ export default function (props: {
             </>
           )}
         </div>
-
+          {/* 阅读全文选项 */}
         {props.type == "overview" && (
           <div className="w-full flex justify-center mt-4 ">
             <Link
               href={`/post/${props.id}`}
               target={getTarget(props.openArticleLinksInNewWindow)}
             >
-              <div className=" dark:bg-dark dark:hover:bg-dark-light dark:hover:text-dark-r dark:border-dark dark:text-dark hover:bg-gray-800 hover:text-gray-50 border-2 border-gray-800 text-sm md:text-base text-gray-700 px-2 py-1 transition-all rounded">
+              <div className="active:bg-gray-500 dark:bg-dark dark:hover:bg-dark-light dark:hover:text-dark-r dark:border-dark dark:text-dark hover:bg-gray-800 hover:text-gray-50 border-2 border-gray-8000 text-sm md:text-base text-gray-700 px-2 py-1 transition-all rounded">
                 阅读全文
               </div>
             </Link>
           </div>
         )}
+        {/* 显示捐款 */}
         {showDonate && props.pay && (
           <Reward
             aliPay={(props?.pay as any)[0]}

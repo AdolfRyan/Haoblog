@@ -1,3 +1,4 @@
+// 页面主要布局
 import Head from "next/head";
 import BackToTopBtn from "../BackToTop";
 import NavBar from "../NavBar";
@@ -19,6 +20,7 @@ export default function (props: {
   sideBar: any;
   children: any;
 }) {
+  // console.log(props.sideBar)
   // console.log(props.option);
   // console.log("css", props.option.customCss);
   // console.log("html", props.option.customHtml);
@@ -34,11 +36,7 @@ export default function (props: {
     if (!current.hasInit && !localStorage.getItem("saidHello")) {
       current.hasInit = true;
       localStorage.setItem("saidHello", "true");
-      console.log("🚀欢迎使用 VanBlog 博客系统");
-      console.log("当前版本：", props?.option?.version || "未知");
-      console.log("项目主页：", "https://vanblog.mereith.com");
-      console.log("开源地址：", "https://github.com/mereithhh/van-blog");
-      console.log("喜欢的话可以给个 star 哦🙏");
+      console.log("这是layout的useEffect输出")
       window.onbeforeunload = handleClose;
     }
     return () => {
@@ -53,6 +51,7 @@ export default function (props: {
         <meta name="description" content={props.option.description}></meta>
         <meta name="robots" content="index, follow"></meta>
       </Head>
+      {/* 返回顶部按钮 */}
       <BackToTopBtn></BackToTopBtn>
       {props.option.baiduAnalysisID != "" &&
         process.env.NODE_ENV != "development" && (
@@ -71,6 +70,7 @@ export default function (props: {
       >
         <Toaster />
         {/* <ImageProvider> */}
+        {/* 上方的导航栏 */}
           <NavBar
             openArticleLinksInNewWindow={
               props.option.openArticleLinksInNewWindow == "true"
@@ -91,14 +91,15 @@ export default function (props: {
             showFriends={props.option.showFriends}
           ></NavBar>
           {/* 下面的好像是移动端的？ */}
-          {/* <NavBarMobile
+          <NavBarMobile
             isOpen={isOpen}
             setIsOpen={setIsOpen}
             showAdminButton={props.option.showAdminButton}
             showFriends={props.option.showFriends}
             menus={props.option.menus}
-          /> */}
+          />
 
+            {/* 页面下的小窗口 */}
           <div className=" mx-auto  lg:px-6  md:py-4 py-2 px-2 md:px-4  text-gray-700 ">
             <LayoutBody children={props.children} sideBar={props.sideBar} />
             {/* 下方的标签 本站运行了****** Powered By******* 等等*/}

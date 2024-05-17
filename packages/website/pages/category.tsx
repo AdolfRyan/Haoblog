@@ -24,8 +24,10 @@ const CategoryPage = (props: CategoryPageProps) => {
           <div className="text-2xl md:text-3xl text-gray-700 text-center dark:text-dark">
             分类
           </div>
+          {/* 子标题 */}
           <div className="text-center text-gray-600 text-sm mt-2 mb-4 font-light dark:text-dark">{`${props.authorCardProps.catelogNum} 分类 × ${props.authorCardProps.postNum} 文章 × ${props.authorCardProps.tagNum} 标签 × ${props.wordTotal} 字`}</div>
         </div>
+        {/* 所有的分类标签 */}
         <div className="flex flex-col mt-2">
           {Object.keys(props.sortedArticles).map((key: string) => {
             return (

@@ -20,9 +20,11 @@ const TagPage = (props: TagPageProps) => {
       sideBar={<AuthorCard option={props.authorCardProps}></AuthorCard>}
     >
       <div className="bg-white card-shadow dark:bg-dark dark:card-shadow-dark py-4 px-8 md:py-6 md:px-8">
+        {/* 标签标题 */}
         <div className="text-lg md:text-xl text-gray-700 dark:text-dark">
           标签
         </div>
+        {/* 所有的标签 */}
         <div className="flex flex-wrap mt-2">
           {props.tags.map((tag) => (
             <Link

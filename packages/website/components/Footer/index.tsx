@@ -60,7 +60,7 @@ export default function ({
         <RunningTime since={since}></RunningTime>
         {/* Poweredby****** */}
         <p className="footer-powered-by-Haoblog">
-          Powered By 陈浩熙 陈大钧 曹钧杰 江瀚翔 刘昊&nbsp;
+          Powered By 陈浩熙 陈大钧 曹钧杰 江翰翔 刘昊&nbsp;
           {/* <a
             href="https://vanblog.mereith.com"
             target={"_blank"}

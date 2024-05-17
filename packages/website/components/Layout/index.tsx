@@ -19,6 +19,7 @@ export default function (props: {
   sideBar: any;
   children: any;
 }) {
+  // console.log(props.option);
   // console.log("css", props.option.customCss);
   // console.log("html", props.option.customHtml);
   // console.log("script", decode(props.option.customScript as string));
@@ -89,16 +90,18 @@ export default function (props: {
             logoDark={props.option.logoDark}
             showFriends={props.option.showFriends}
           ></NavBar>
-          <NavBarMobile
+          {/* 下面的好像是移动端的？ */}
+          {/* <NavBarMobile
             isOpen={isOpen}
             setIsOpen={setIsOpen}
             showAdminButton={props.option.showAdminButton}
             showFriends={props.option.showFriends}
             menus={props.option.menus}
-          />
+          /> */}
 
           <div className=" mx-auto  lg:px-6  md:py-4 py-2 px-2 md:px-4  text-gray-700 ">
             <LayoutBody children={props.children} sideBar={props.sideBar} />
+            {/* 下方的标签 本站运行了****** Powered By******* 等等*/}
             <Footer
               ipcHref={props.option.ipcHref}
               ipcNumber={props.option.ipcNumber}

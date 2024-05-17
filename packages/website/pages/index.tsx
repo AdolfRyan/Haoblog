@@ -23,6 +23,7 @@ const Home = (props: IndexPageProps) => {
       title={props.layoutProps.siteName}
       sideBar={<AuthorCard option={props.authorCardProps}></AuthorCard>}
     >
+      {/* 这个Head有什么用？我把他注释掉了页面还是很正常 */}
       <Head>
         <meta
           name="keywords"

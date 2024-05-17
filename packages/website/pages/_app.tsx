@@ -40,8 +40,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         const { viewer, visited } = await updatePageview(pathname);
         setGlobalState({ ...globalState, viewer: viewer, visited: visited });
       }
-
     },
+    //调用setGlobalState函数，修改访客信息
     [globalState, setGlobalState]
   );
   const handleRouteChange = (
@@ -55,6 +55,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     if (!current.hasInit) {
       current.hasInit = true;
       reloadViewer("初始化");
+      //监听路由变化
       router.events.on("routeChangeComplete", handleRouteChange);
     }
   }, [current, reloadViewer]);
@@ -68,6 +69,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="width=device-width, initial-scale=1, user-scalable=no"
         />
       </Head>
+      {/* 全局状态 */}
       <GlobalContext.Provider
         value={{ state: globalState, setState: setGlobalState }}
       >

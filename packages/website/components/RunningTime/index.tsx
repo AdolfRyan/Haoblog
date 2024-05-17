@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import dayjs from "dayjs";
+//本站居然运行了***秒
 export default function (props: { since: string }) {
   const [t, setT] = useState("");
   const { current } = useRef<any>({ timer: null });

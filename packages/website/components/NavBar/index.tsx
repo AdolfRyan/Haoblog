@@ -1,3 +1,4 @@
+//右上角的标签栏
 import Link from "next/link";
 import Headroom from "headroom.js";
 import { useContext, useEffect, useMemo, useState } from "react";
@@ -51,6 +52,7 @@ export default function (props: {
 
   return (
     <>
+    {/* 搜索弹窗 */}
       <SearchCard
         openArticleLinksInNewWindow={props.openArticleLinksInNewWindow}
         visible={showSearch}
@@ -66,6 +68,7 @@ export default function (props: {
           className=" flex  items-center w-full border-b border-gray-200 h-14 dark:border-nav-dark"
           style={{ height: 56 }}
         >
+          {/* 下面这个是什么 我注释掉了,只是上面的标签栏的词间距会变大 */}
           <div className="mx-4 flex items-center">
             <div
               className="cursor-pointer block md:hidden"
@@ -115,6 +118,7 @@ export default function (props: {
           )}
           {/* 第二个flex */}
           <div className="flex justify-between h-full flex-grow nav-content">
+            {/* 左上角网址名称 */}
             <div
               style={{ transform: "translateX(30px)" }}
               className="cursor-pointer md:hidden  flex-grow text-center  flex items-center justify-center select-none dark:text-dark"
@@ -123,11 +127,13 @@ export default function (props: {
                 <div>{props.siteName}</div>
               </Link>
             </div>
+            {/* 左边的 首页 标签 分类 时间线 等六个 */}
             <ul className=" md:flex h-full items-center  text-sm text-gray-600 dark:text-dark hidden">
               {props.menus.map((m) => {
                 return <Item key={m.id} item={m} />;
               })}
             </ul>
+            {/* 右上角搜索栏等 */}
             <div className="flex nav-action">
               <div
                 onClick={() => {
@@ -137,6 +143,7 @@ export default function (props: {
                 title="搜索"
                 className="flex group transform hover:scale-110 transition-all select-none cursor-pointer"
               >
+                {/* 放大镜矢量图 */}
                 <div className="flex items-center mr-0 sm:mr-2 hover:cursor-pointer   transition-all dark:text-dark fill-gray-600">
                   <svg
                     viewBox="0 0 1024 1024"
@@ -156,18 +163,23 @@ export default function (props: {
                     ></path>
                   </svg>
                 </div>
+                {/* 搜索栏 */}
                 <div className="flex items-center ">
                   <KeyCard type="search"></KeyCard>
                 </div>
               </div>
+              {/* 主题按钮 */}
               <ThemeButton defaultTheme={props.defaultTheme} />
+              {/* RSS订阅按钮 */}
               {props.showRSS == "true" && (
                 <RssButton showAdminButton={props.showAdminButton == "true"} />
               )}
+              {/* 管理后台 */}
               {props.showAdminButton == "true" && <AdminButton />}
             </div>
           </div>
         </div>
+        {/* 这个也是不知道有啥用,有判断条件的,目前还没看 */}
         {Boolean(props.categories.length) && props.showSubMenu == "true" && (
           <div className="h-10 items-center hidden md:flex border-b border-gray-200 dark:border-nav-dark overflow-hidden">
             <div

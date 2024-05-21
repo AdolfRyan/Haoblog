@@ -1,3 +1,4 @@
+//加载并执行百度统计的脚本，用于收集和分析网站访问数据。
 import Script from "next/script";
 import { useEffect, useRef } from "react";
 export default function (props: { id: string }) {

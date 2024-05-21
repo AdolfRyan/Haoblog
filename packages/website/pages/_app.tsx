@@ -16,7 +16,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import { getPageview, updatePageview } from "../api/pageview";
 import Head from "next/head";
-
+//函数组件，Component 是当前页面组件，pageProps 是页面组件的 props。
 function MyApp({ Component, pageProps }: AppProps) {
   const { current } = useRef({ hasInit: false });
 
@@ -25,7 +25,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     visited: 0,
   });
 
+  //路由处理
   const router = useRouter();
+  //重新加载页面，访客信息
   const reloadViewer = useCallback(
     async (reason: string) => {
       const pathname = window.location.pathname;
@@ -38,8 +40,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         const { viewer, visited } = await updatePageview(pathname);
         setGlobalState({ ...globalState, viewer: viewer, visited: visited });
       }
-
     },
+    //调用setGlobalState函数，修改访客信息
     [globalState, setGlobalState]
   );
   const handleRouteChange = (
@@ -48,14 +50,17 @@ function MyApp({ Component, pageProps }: AppProps) {
   ) => {
     reloadViewer(`页面跳转`);
   };
+  //检测是否初始化，监测是否有路由变化
   useEffect(() => {
     if (!current.hasInit) {
       current.hasInit = true;
       reloadViewer("初始化");
+      //监听路由变化
       router.events.on("routeChangeComplete", handleRouteChange);
     }
   }, [current, reloadViewer]);
 
+  //返回一个 React 组件的 JSX 结构。这个结构包含了一些 HTML 元素和 React 组件。
   return (
     <>
       <Head>
@@ -64,6 +69,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="width=device-width, initial-scale=1, user-scalable=no"
         />
       </Head>
+      {/* 全局状态 */}
       <GlobalContext.Provider
         value={{ state: globalState, setState: setGlobalState }}
       >

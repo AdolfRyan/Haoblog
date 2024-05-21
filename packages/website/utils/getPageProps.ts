@@ -1,3 +1,4 @@
+//获取网站参数
 import { getPublicMeta } from "../api/getAllData";
 import { IndexPageProps } from "../pages/index";
 import { TagPageProps } from "../pages/tag";
@@ -18,6 +19,7 @@ import {
 } from "../api/getArticles";
 import { LinkPageProps } from "../pages/link";
 
+//获取主页有关参数
 export async function getIndexPageProps(): Promise<IndexPageProps> {
   const data = await getPublicMeta();
   const layoutProps = getLayoutProps(data);
@@ -33,7 +35,7 @@ export async function getIndexPageProps(): Promise<IndexPageProps> {
     authorCardProps,
   };
 }
-
+//获取时间线页面有关参数
 export async function getTimeLinePageProps(): Promise<TimeLinePageProps> {
   const data = await getPublicMeta();
   const layoutProps = getLayoutProps(data);
@@ -47,6 +49,7 @@ export async function getTimeLinePageProps(): Promise<TimeLinePageProps> {
     wordTotal,
   };
 }
+//获取标签页有关参数
 export async function getTagPageProps(): Promise<TagPageProps> {
   const data = await getPublicMeta();
   const layoutProps = getLayoutProps(data);
@@ -58,6 +61,7 @@ export async function getTagPageProps(): Promise<TagPageProps> {
     tags,
   };
 }
+//获取分类页有关参数
 export async function getCategoryPageProps(): Promise<CategoryPageProps> {
   const data = await getPublicMeta();
   const layoutProps = getLayoutProps(data);
@@ -71,6 +75,7 @@ export async function getCategoryPageProps(): Promise<CategoryPageProps> {
     sortedArticles,
   };
 }
+//获取友链页有关参数
 export async function getLinkPageProps(): Promise<LinkPageProps> {
   const data = await getPublicMeta();
   const layoutProps = getLayoutProps(data);
@@ -81,6 +86,7 @@ export async function getLinkPageProps(): Promise<LinkPageProps> {
     links: data.meta.links,
   };
 }
+//获取关于页有关参数
 export async function getAboutPageProps(): Promise<AboutPageProps> {
   const data = await getPublicMeta();
   const layoutProps = getLayoutProps(data);
@@ -118,6 +124,7 @@ export async function getAboutPageProps(): Promise<AboutPageProps> {
     ...payProps,
   };
 }
+//获取标签页有关参数
 export async function getTagPagesProps(
   currTag: string
 ): Promise<TagPagesProps> {

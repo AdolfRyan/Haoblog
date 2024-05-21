@@ -21,7 +21,9 @@ export function Title(props: {
     return false;
   }, [props]);
   return (
+    // 大标题
     <div className="flex justify-center post-card-title ">
+      {/* 注意 这是个if判断式子 */}
       {props.type != "about" ? (
         <Link href={`/post/${props.id}`} target={getTarget(newTab)} style={{width:"90%"}} title={props.title}>
           <div
@@ -41,6 +43,7 @@ export function Title(props: {
           {props.title}
         </div>
       )}
+      {/* 编辑选项 */}
       {showEditButton && (
         <a
           className="flex items-center"
@@ -81,6 +84,7 @@ export function SubTitle(props: {
   }, [props]);
   return (
     <div className="text-center text-xs md:text-sm divide-x divide-gray-400 text-gray-400 dark:text-dark post-card-sub-title">
+      {/* 编辑时间 */}
       <span className="inline-flex px-2 items-center">
         <span className={iconClass}>
           <svg
@@ -105,7 +109,7 @@ export function SubTitle(props: {
           ? `${dayjs(props.createdAt).format("YYYY-MM-DD")}`
           : ` ${dayjs(props.updatedAt).format("YYYY-MM-DD")}`}
       </span>
-
+    {/* 分类 */}
       {props.type != "about" && (
         <span className="inline-flex px-2 items-center group dark:group cursor-pointer">
           <span className={iconClass}>
@@ -132,8 +136,10 @@ export function SubTitle(props: {
           </Link>
         </span>
       )}
+      {/* 子标题的间距等等 */}
       <span className="inline-flex px-2 items-center">
         <span className={iconClass}>
+          {/* 小眼睛 */}
           <svg
             viewBox="0 0 1024 1024"
             version="1.1"
@@ -154,6 +160,7 @@ export function SubTitle(props: {
         </span>
         <PostViewer shouldAddViewer={props.type != "overview"} id={props.id} />
       </span>
+      {/* 评论 */}
       {props.enableComment != "false" && (
         <span className="inline-flex px-2 items-center">
           <span className={iconClass}>

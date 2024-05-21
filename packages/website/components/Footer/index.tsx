@@ -56,21 +56,24 @@ export default function ({
             </a>
           </p>
         )}
+        {/* 本站居然运行了***秒 */}
         <RunningTime since={since}></RunningTime>
-        <p className="footer-powered-by-vanblog">
-          Powered By&nbsp;
-          <a
+        {/* Poweredby****** */}
+        <p className="footer-powered-by-Haoblog">
+          Powered By 陈浩熙 陈大钧 曹钧杰 江翰翔 刘昊&nbsp;
+          {/* <a
             href="https://vanblog.mereith.com"
             target={"_blank"}
             className="hover:text-gray-900 dark:hover:text-dark-hover transition ua ua-link"
           >
             VanBlog <span>{version}</span>
-          </a>
+          </a> */}
         </p>
-
+          {/* 2024 - 2024 */}
         <p className="select-none footer-copy-right">
           © {new Date(since).getFullYear()} - {new Date().getFullYear()}
         </p>
+        {/* 全站浏览量统计 */}
         <p className="select-none footer-viewer">
           <Viewer></Viewer>
         </p>

@@ -24,6 +24,7 @@ export class PublicController {
     private readonly settingProvider: SettingProvider,
     private readonly customPageProvider: CustomPageProvider,
   ) {}
+  //返回自定义页面的数据
   @Get('/customPage/all')
   async getAll() {
     return {
@@ -31,6 +32,7 @@ export class PublicController {
       data: await this.customPageProvider.getAll(),
     };
   }
+  //返回特定路径的自定义页面数据，并对HTML内容进行Base64编码。
   @Get('/customPage')
   async getOneByPath(@Query('path') path: string) {
     const data = await this.customPageProvider.getCustomPageByPath(path);
@@ -43,6 +45,7 @@ export class PublicController {
       },
     };
   }
+  //返回指定ID或路径的文章数据。
   @Get('/article/:id')
   async getArticleByIdOrPathname(@Param('id') id: string) {
     const data = await this.articleProvider.getByIdOrPathnameWithPreNext(id, 'public');
@@ -51,6 +54,7 @@ export class PublicController {
       data: data,
     };
   }
+  //返回指定ID和密码的文章数据。
   @Post('/article/:id')
   async getArticleByIdOrPathnameWithPassword(
     @Param('id') id: number | string,
@@ -62,7 +66,7 @@ export class PublicController {
       data: data,
     };
   }
-
+  //返回匹配搜索字符串的文章列表。
   @Get('/search')
   async searchArticle(@Query('value') search: string) {
     const data = await this.articleProvider.searchByString(search, false);
@@ -105,6 +109,7 @@ export class PublicController {
       data: data,
     };
   }
+  //返回指定文章的访问者数据。
   @Get('/article/viewer/:id')
   async getViewerByArticleIdOrPathname(@Param('id') id: number | string) {
     const data = await this.visitProvider.getByArticleId(id);
@@ -113,7 +118,7 @@ export class PublicController {
       data: data,
     };
   }
-
+  //返回具有指定标签的文章列表。
   @Get('/tag/:name')
   async getArticlesByTagName(@Param('name') name: string) {
     const data = await this.tagProvider.getArticlesByTag(name, false);
@@ -122,6 +127,7 @@ export class PublicController {
       data: this.articleProvider.toPublic(data),
     };
   }
+  //返回符合选项的文章列表。
   @Get('article')
   async getByOption(
     @Query('page') page: number,
@@ -152,6 +158,7 @@ export class PublicController {
       data,
     };
   }
+  //返回时间轴信息数据。
   @Get('timeline')
   async getTimeLineInfo() {
     const data = await this.articleProvider.getTimeLineInfo();
@@ -160,6 +167,7 @@ export class PublicController {
       data,
     };
   }
+  //返回包含文章的分类信息。
   @Get('category')
   async getArticlesByCategory() {
     const data = await this.categoryProvider.getCategoriesWithArticle(false);
@@ -168,6 +176,7 @@ export class PublicController {
       data,
     };
   }
+  //返回包含文章的标签信息。
   @Get('tag')
   async getArticlesByTag() {
     const data = await this.tagProvider.getTagsWithArticle(false);
@@ -176,7 +185,7 @@ export class PublicController {
       data,
     };
   }
-
+  //返回构建的元数据，包括标签、分类、菜单设置、文章总数、总字数和布局设置。
   @Get('/meta')
   async getBuildMeta() {
     const tags = await this.tagProvider.getAllTags(false);

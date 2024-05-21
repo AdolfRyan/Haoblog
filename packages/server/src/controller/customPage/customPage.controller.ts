@@ -6,6 +6,7 @@ import { join } from 'path';
 import { config } from 'src/config';
 import { checkFolder } from 'src/utils/checkFolder';
 
+//用于处理路径以/c/开头的请求，并根据路径参数动态加载和返回自定义页面的内容。
 @ApiTags('c')
 @Controller('c')
 export class PublicCustomPageController {

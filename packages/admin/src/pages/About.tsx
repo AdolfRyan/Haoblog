@@ -37,7 +37,8 @@ export default function (props) {
                 <Tag color="cyan">{version}</Tag>
               </div>
             </div>
-            <p align="center">一款简洁实用优雅的高性能个人博客系统</p>
+            <p style={{ textAlign: 'center' }}>一款简洁实用优雅的高性能个人博客系统</p>
+
 
             <Space>
               <a target={'_blank'} rel="noreferrer" href="https://github.com/Mereithhh/van-blog">

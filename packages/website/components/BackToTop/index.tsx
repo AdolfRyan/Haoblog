@@ -4,12 +4,13 @@ import React, { useEffect, useState } from "react";
 import style from "../../styles/back-to-top.module.css";
 import { scrollTo } from "../../utils/scroll";
 
+//获取页面的滚动距离
 const getScrollTop = (): number =>
   window.pageYOffset ||
   document.documentElement.scrollTop ||
   document.body.scrollTop ||
   0;
-
+//滚动到页面顶部
 const scrollToTop = () =>
   scrollTo(window, {
     top: 0,
@@ -34,6 +35,17 @@ export default () => {
 
   return (
     <>
+    {/* display: flex;：设置为 flex 布局，元素的子元素会排成一行。
+justify-content: center; 和 align-items: center;：设置 flex 布局的对齐方式为居中，元素的子元素会在主轴和交叉轴上居中。
+position: fixed;：设置定位方式为固定定位，元素的位置相对于浏览器窗口固定。
+right: 1rem; 和 bottom: 2rem;：设置元素距离右边和底部的距离。
+width: 42px; 和 height: 42px;：设置元素的宽度和高度。
+background-color: #fff;：设置背景颜色为白色。
+font-size: 40px;：设置字体大小为 40px。
+z-index: 90;：设置堆叠顺序为 90，元素会覆盖 z-index 值小于 90 的元素。
+cursor: pointer;：设置鼠标指针为手形，表示元素是可点击的。
+text-align: center;：设置文本对齐方式为居中。
+box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.15);：设置阴影效果。 */}
       {display && (
         <div
           title="返回顶部"

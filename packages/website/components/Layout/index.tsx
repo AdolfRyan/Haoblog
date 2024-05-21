@@ -20,6 +20,7 @@ export default function (props: {
   sideBar: any;
   children: any;
 }) {
+  console.log(props.children)
   // console.log(props.sideBar)
   // console.log(props.option);
   // console.log("css", props.option.customCss);
@@ -99,8 +100,8 @@ export default function (props: {
             menus={props.option.menus}
           />
 
-            {/* 页面下的小窗口 */}
-          <div className=" mx-auto  lg:px-6  md:py-4 py-2 px-2 md:px-4  text-gray-700 ">
+            {/* 下面的界面 */}
+          <div className=" mx-auto  lg:px-6  md:py-4 py-2 px-2 md:px-4  text-grey-700 ">
             <LayoutBody children={props.children} sideBar={props.sideBar} />
             {/* 下方的标签 本站运行了****** Powered By******* 等等*/}
             <Footer

@@ -7,6 +7,8 @@ import routes from './routes';
 const { REACT_APP_ENV } = process.env;
 export default defineConfig({
   hash: true,
+  // base: '/admin/'：这个配置设置了应用的基础路径为 /admin。这意味着所有的路由都会在这个基础路径之后。
+  // 例如，路由 /article 实际上会变成 /admin/article。
   base: '/admin/',
   devServer: { https: false, port: 3002 },
   publicPath: process.env.EEE === 'production' ? '/admin/' : '/',

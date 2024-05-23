@@ -172,7 +172,9 @@ export const layout = ({ initialState, setInitialState }) => {
     rightContentRender: () => {
       return (
         <div style={{ display: 'flex', alignItems: 'center' }}>
+          {/* 页面缩放时 右上角的主题按钮 */}
           <ThemeButton showText={false} />
+          {/* 页面缩放时，右上角的登出按钮 */}
           <LogoutButton
             key="logoutRightContent"
             trigger={
@@ -193,7 +195,15 @@ export const layout = ({ initialState, setInitialState }) => {
       //   return false;
       // }
       // 目前 footer 只有发 console.log 一个功能了。
-      return <Footer />;
+      return <div style={{ textAlign: 'center', padding: '20px 0', background: 'none' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <span style={{ margin: '0 10px' }}>曹钧杰</span>
+        <span style={{ margin: '0 10px' }}>陈大钧</span>
+        <span style={{ margin: '0 10px' }}>陈浩熙</span>
+        <span style={{ margin: '0 10px' }}>江瀚翔</span>
+        <span style={{ margin: '0 10px' }}>刘昊</span>
+      </div>
+    </div>; 
     },
     onPageChange: () => {
       const { location } = history; // 如果没有登录，重定向到 login

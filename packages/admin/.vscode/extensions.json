@@ -1,9 +1,8 @@
 {
-  // 推荐插件
   "recommendations": [
-    "esbenp.prettier-vscode", //  代码格式化工具（首选）
-    "dbaeumer.vscode-eslint", //  JavaScript 代码检查工具
-    "stylelint.vscode-stylelint", //  用于 CSS 和相关语言的代码风格检查
-    "wangzy.sneak-mark" //  检测英文语句中的中文符号
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "wangzy.sneak-mark"
   ]
 }

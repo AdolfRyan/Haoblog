@@ -2,17 +2,17 @@
 // Umi配置文件
 import MonacoWebpackPlugin from 'monaco-editor-webpack-plugin';
 import { defineConfig } from 'umi';
-import defaultSettings from './defaultSettings';  // 导入默认设置（同目录下defaultSetting.js文件)
-import proxy from './proxy';    //  导入代理配置（同目录下proxy.js文件)
-import routes from './routes';  //  导入路由配置（同目录下routes.js文件)
-const { REACT_APP_ENV } = process.env;  //  从环境变量中获取 REACT_APP_ENV (process 是 Node.js 的全局对象)
-
-// 导出默认配置
+import defaultSettings from './defaultSettings';
+import proxy from './proxy';
+import routes from './routes';
+const { REACT_APP_ENV } = process.env;
 export default defineConfig({
-  hash: true, //  生成 hash 文件名，用于版本管理
-  base: '/admin/',  //  项目的基本路径
-  devServer: { https: false, port: 3002 },  //  开发服务器配置 3002为后台端口
-  publicPath: process.env.EEE === 'production' ? '/admin/' : '/', // 根据环境变量设置的 publicPath
+  hash: true,
+  // base: '/admin/'：这个配置设置了应用的基础路径为 /admin。这意味着所有的路由都会在这个基础路径之后。
+  // 例如，路由 /article 实际上会变成 /admin/article。
+  base: '/admin/',
+  devServer: { https: false, port: 3002 },
+  publicPath: process.env.EEE === 'production' ? '/admin/' : '/',
   antd: {},
   dva: {
     hmr: true,

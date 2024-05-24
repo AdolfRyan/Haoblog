@@ -38,5 +38,9 @@
     "nan": "^2.18.0",
     "prettier": "^3.2.5",
     "standard-version": "^9.5.0"
+  },
+  "dependencies": {
+    "@umijs/plugin-model": "^2.6.2",
+    "umi": "^3.5.41"
   }
 }

@@ -1,15 +1,16 @@
 import Footer from '@/components/Footer';
-import { HomeOutlined, LogoutOutlined, ProjectOutlined } from '@ant-design/icons';
-import { PageLoading, SettingDrawer } from '@ant-design/pro-layout';
-import { message, Modal, notification } from 'antd';
+import { HomeOutlined, LogoutOutlined, ProjectOutlined } from '@ant-design/icons';  //  导入侧边栏需要的图标https://ant.design/components/icon-cn
+import { PageLoading, SettingDrawer } from '@ant-design/pro-layout';  // https://pro.ant.design/zh-CN/docs/layout/
+import { message, Modal, notification } from 'antd';  // https://ant.design/components/message-cn
 import moment from 'moment';
-import { history, Link } from 'umi';
+import { history, Link } from 'umi';  // Link:https://v3.umijs.org/zh-CN/docs/navigate-between-pages
 import defaultSettings from '../config/defaultSettings';
-import LogoutButton from './components/LogoutButton';
-import ThemeButton from './components/ThemeButton';
+import LogoutButton from './components/LogoutButton'; // 后台登出按钮
+import ThemeButton from './components/ThemeButton'; // 后台配色主题按钮
 import { fetchAllMeta } from './services/van-blog/api';
 import { checkUrl } from './services/van-blog/checkUrl';
 import { beforeSwitchTheme, getInitTheme, mapTheme } from './services/van-blog/theme';
+import { log } from 'console';
 
 // 检查环境是否为开发环境
 const isDev = process.env.UMI_ENV === 'dev';
@@ -38,7 +39,7 @@ export async function getInitialState() {
         history.push('/init');
         return msg.data || {};
       } else if (history.location.pathname == '/init' && msg.statusCode == 200) { //  已初始化
-        history.push('/');  //
+        history.push('/');  // 若这行删掉, 则输入localhost:3002/init 不能导航到localhost:3002/admin/article
       }
       return msg.data;
     } catch (error) { //  登录失败
@@ -191,17 +192,18 @@ window.onresize = handleSizeChange; //  窗口大小改变时, 动态调整头�
 //页面改变时的行为，链接，以及子元素的渲染。它还处理了主题切换和设置更改。
 export const layout = ({ initialState, setInitialState }) => {
   handleSizeChange(); //  初始化头部显示状态
+
   return {
     rightContentRender: () => {
       return (
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <ThemeButton showText={false} />
+          <ThemeButton showText={true} />
           <LogoutButton
             key="logoutRightContent"
             trigger={
               <a>
                 <LogoutOutlined />
-                <span style={{ marginLeft: 6 }}>登出</span>
+                <span style={{ marginLeft: 100 }}>登出</span>
               </a>
             }
           />
@@ -222,6 +224,8 @@ export const layout = ({ initialState, setInitialState }) => {
     // 页面变化时执行的操作
     onPageChange: () => {
       const { location } = history; // 如果没有登录，重定向到 login
+      console.log("app.jsx onPageChange(): " + JSON.stringify(history, null, 2)); // 添加调试信息
+
       if (location.pathname === '/init' && !initialState?.user) {
         return;
       }
@@ -234,21 +238,22 @@ export const layout = ({ initialState, setInitialState }) => {
       }
     },
 
+
     // 侧边栏导航
     links: [
-      <a key="mainSiste" rel="noreferrer" target="_blank" href={'/'}>
+      <a key="mainSiste" rel="noreferrer" target="_blank" href={'/'} onClick={() => console.log('Link clicked: mainSiste')}>
         <HomeOutlined />
         <span>主站</span>
       </a>,
-      <Link key="AboutLink" to={'/about'}>
+      <Link key="AboutLink" to={'/about'} onClick={() => console.log('Link clicked: AboutLink')}>
         <ProjectOutlined />
         <span>关于</span>
       </Link>,
-      <ThemeButton key="themeBtn" showText={true} />,
+      <ThemeButton key="themeBtn" showText={true} onClick={() => console.log('Link clicked: themeBtn')} />,
       <LogoutButton
         key="logoutSider"
         trigger={
-          <a>
+          <a onClick={() => console.log('Link clicked: logoutSider')}>
             <LogoutOutlined />
             <span>登出</span>
           </a>
@@ -260,9 +265,12 @@ export const layout = ({ initialState, setInitialState }) => {
     // unAccessible: <div>unAccessible</div>,
     // 增加一个 loading 的状态
 
-    // 渲染子组件并添加设置抽屉
+
+    // https://pro.ant.design/zh-CN/docs/dynamic-theme
+    // 渲染子组件并添加设置抽屉(目前似乎只有暗色模式和亮色模式的切换)
     childrenRender: (children, props) => {
       // if (initialState?.loading) return <PageLoading />;
+      console.log("childrenRender");
       return (
         <>
           {children}

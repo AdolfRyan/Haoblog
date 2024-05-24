@@ -9,6 +9,8 @@ import { PlusOutlined } from '@ant-design/icons';
 import { ModalForm, ProFormSelect, ProFormText, ProTable } from '@ant-design/pro-components';
 import { Button, message, Modal } from 'antd';
 import { useRef } from 'react';
+
+// 现有分类列表
 const columns = [
   {
     dataIndex: 'name',
@@ -38,6 +40,7 @@ const columns = [
     valueType: 'option',
     width: 200,
     render: (text, record, _, action) => [
+      // 查看
       <a
         key="viewCategory"
         onClick={() => {
@@ -46,6 +49,8 @@ const columns = [
       >
         查看
       </a>,
+
+      // 修改
       <ModalForm
         key={`editCateoryC%{${record.name}}`}
         title={`修改分类 "${record.name}"`}
@@ -100,6 +105,7 @@ const columns = [
         />
       </ModalForm>,
 
+      // 删除
       <a
         key={'deleteCategoryC' + record.name}
         onClick={() => {
@@ -121,6 +127,8 @@ const columns = [
     ],
   },
 ];
+
+
 export default function () {
   const fetchData = async () => {
     const { data: res } = await getAllCategories(true);
@@ -134,13 +142,16 @@ export default function () {
     <>
       <ProTable
         rowKey="name"
-        columns={columns}
+        columns={columns} //  显示现有分类
         search={false}
         dateFormatter="string"
         // headerTitle="分类"
         actionRef={actionRef}
-        options={false}
+        options={true}
+
+        // 右上方工具栏
         toolBarRender={() => [
+          // 新建分类
           <ModalForm
             title="新建分类"
             key="newCategoryN"
@@ -153,8 +164,8 @@ export default function () {
             autoFocusFirstInput
             submitTimeout={3000}
             onFinish={async (values) => {
-              await createCategory(values);
-              actionRef?.current?.reload();
+              await createCategory(values); // 填写分类信息，会向后端发送一个POST请求
+              actionRef?.current?.reload(); // 刷新表格数据
               message.success('新建分类成功！');
               return true;
             }}

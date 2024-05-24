@@ -1,4 +1,5 @@
 // https://umijs.org/config/
+// Umi配置文件
 import MonacoWebpackPlugin from 'monaco-editor-webpack-plugin';
 import { defineConfig } from 'umi';
 import defaultSettings from './defaultSettings';  // 导入默认设置（同目录下defaultSetting.js文件)
@@ -17,7 +18,7 @@ export default defineConfig({
     hmr: true,
   },
   layout: { //  布局配置，包括侧边栏宽度等
-    // https://umijs.org/zh-CN/plugins/plugin-layout
+    // https://v3.umijs.org/zh-CN/plugins/plugin-layout
     locale: false,
     siderWidth: 208,
     ...defaultSettings,

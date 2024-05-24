@@ -1,3 +1,6 @@
+// 这段代码主要用于处理PWA相关的逻辑，包括离线状态的提示和新内容可用时的提示
+// 同时也处理了不使用PWA但支持Service Worker的情况下的一些清理工作
+
 import { Button, message, notification } from 'antd';
 import defaultSettings from '../config/defaultSettings';
 const { pwa } = defaultSettings;

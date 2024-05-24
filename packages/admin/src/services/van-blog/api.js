@@ -250,6 +250,7 @@ export async function updateUser(body) {
   });
 }
 export async function createCategory(body) {
+  console.log("createCategory:", body);
   return request(`/api/admin/category/`, {
     method: 'POST',
     data: body,

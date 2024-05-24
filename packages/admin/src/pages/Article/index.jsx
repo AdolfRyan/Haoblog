@@ -10,12 +10,18 @@ import { useMemo, useRef, useState } from 'react';
 import { history } from 'umi';
 import { articleObjAll, articleObjSmall, columns } from './columns';
 
+// 定义默认导出的函数式组件
 export default () => {
+  // 引用操作表格的 Ref
   const actionRef = useRef();
-  const [colKeys, setColKeys] = useState(articleObjAll);
-  const [simplePage, setSimplePage] = useState(false);
-  const [simpleSearch, setSimpleSearch] = useState(false);
-  const [pageSize, setPageSize] = useNum(10, 'article-page-size');
+
+  // 定义状态变量
+  const [colKeys, setColKeys] = useState(articleObjAll);  // 列显示配置
+  const [simplePage, setSimplePage] = useState(false);  // 简化分页
+  const [simpleSearch, setSimpleSearch] = useState(false);  // 简化搜索
+  const [pageSize, setPageSize] = useNum(10, 'article-page-size');  // 每页显示的文章数量
+
+  // 根据 simpleSearch 的状态计算搜索栏的跨度
   const searchSpan = useMemo(() => {
     if (!simpleSearch) {
       return 8;
@@ -23,6 +29,7 @@ export default () => {
       return 24;
     }
   }, [simpleSearch]);
+
   return (
     <PageContainer
       title={null}
@@ -39,16 +46,15 @@ export default () => {
           setSimpleSearch(offset.width < 750);
           setSimplePage(offset.width < 600);
           if (r) {
-            setColKeys(articleObjSmall);
+            setColKeys(articleObjSmall);  // 屏幕宽度小于1000时使用精简列配置
           } else {
-            setColKeys(articleObjAll);
+            setColKeys(articleObjAll);  // 否则使用完整列配置
           }
-          //  小屏幕的话把默认的 col keys 删掉一些
         }}
       >
         <ProTable
-          columns={columns}
-          actionRef={actionRef}
+          columns={columns}  // 表格列配置
+          actionRef={actionRef}  // 操作表格的 Ref
           cardBordered
           rowSelection={{
             fixed: true,
@@ -59,18 +65,18 @@ export default () => {
               <Space>
                 <a
                   onClick={async () => {
-                    await batchDelete(selectedRowKeys);
+                    await batchDelete(selectedRowKeys);  // 批量删除选中的文章
                     message.success('批量删除成功！');
-                    actionRef.current.reload();
-                    onCleanSelected();
+                    actionRef.current.reload();  // 刷新表格数据
+                    onCleanSelected();  // 清除选择
                   }}
                 >
                   批量删除
                 </a>
                 <a
                   onClick={() => {
-                    batchExport(selectedRowKeys);
-                    onCleanSelected();
+                    batchExport(selectedRowKeys);  // 批量导出选中的文章
+                    onCleanSelected();  // 清除选择
                   }}
                 >
                   批量导出
@@ -80,30 +86,18 @@ export default () => {
             );
           }}
           request={async (params = {}, sort, filter) => {
+            // 构建请求参数
             const option = {};
             if (sort.createdAt) {
-              if (sort.createdAt == 'ascend') {
-                option.sortCreatedAt = 'asc';
-              } else {
-                option.sortCreatedAt = 'desc';
-              }
+              option.sortCreatedAt = sort.createdAt === 'ascend' ? 'asc' : 'desc';
             }
             if (sort.top) {
-              if (sort.top == 'ascend') {
-                option.sortTop = 'asc';
-              } else {
-                option.sortTop = 'desc';
-              }
+              option.sortTop = sort.top === 'ascend' ? 'asc' : 'desc';
             }
             if (sort.viewer) {
-              if (sort.viewer == 'ascend') {
-                option.sortViewer = 'asc';
-              } else {
-                option.sortViewer = 'desc';
-              }
+              option.sortViewer = sort.viewer === 'ascend' ? 'asc' : 'desc';
             }
 
-            // 搜索
             const { current, pageSize, ...searchObj } = params;
             if (searchObj) {
               for (const [targetName, target] of Object.entries(searchObj)) {
@@ -136,24 +130,21 @@ export default () => {
             }
             option.page = current;
             option.pageSize = pageSize;
+
+            // 发送请求获取文章数据
             const { data } = await getArticlesByOption(option);
             const { articles, total } = data;
             return {
               data: articles,
-              // success 请返回 true，
-              // 不然 table 会停止解析数据，即使有数据
               success: Boolean(data),
-              // 不传会使用 data 的长度，如果是分页一定要传
               total: total,
             };
           }}
           editable={false}
           columnsState={{
-            // persistenceKey: 'van-blog-article-table',
-            // persistenceType: 'localStorage',
             value: colKeys,
             onChange(value) {
-              setColKeys(value);
+              setColKeys(value);  // 更新列显示配置
             },
           }}
           rowKey="id"
@@ -167,7 +158,7 @@ export default () => {
             simple: simplePage,
             onChange: (p, ps) => {
               if (ps != pageSize) {
-                setPageSize(ps);
+                setPageSize(ps);  // 更新每页显示数量
               }
             },
           }}
@@ -178,7 +169,7 @@ export default () => {
             <Button
               key="editAboutMe"
               onClick={() => {
-                history.push(`/editor?type=about&id=${0}`);
+                history.push(`/editor?type=about&id=${0}`);  // 跳转到编辑关于页面
               }}
             >
               {`编辑关于`}
@@ -186,14 +177,14 @@ export default () => {
             <NewArticleModal
               key="newArticle123"
               onFinish={(data) => {
-                actionRef?.current?.reload();
-                history.push(`/editor?type=article&id=${data.id}`);
+                actionRef?.current?.reload();  // 刷新表格数据
+                history.push(`/editor?type=article&id=${data.id}`);  // 跳转到编辑文章页面
               }}
             />,
             <ImportArticleModal
               key="importArticleBtn"
               onFinish={() => {
-                actionRef?.current?.reload();
+                actionRef?.current?.reload();  // 刷新表格数据
                 message.success('导入成功！');
               }}
             />,

@@ -16,7 +16,7 @@ export default function () {
     socials: <Social />,
     menuConfig: <Menu />,
   };
-  const [tab, setTab] = useTab('category', 'tab');
+  const [tab, setTab] = useTab('category', 'tab');  //  category为默认页面入口
 
   return (
     <PageContainer

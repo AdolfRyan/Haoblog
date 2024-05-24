@@ -1,21 +1,21 @@
 {
-  "name": "VanBlog",
-  "short_name": "VanBlog",
+  "name": "HaoBlog",
+  "short_name": "HaoBlog",
   "display": "standalone",
   "start_url": "/admin",
   "theme_color": "#002140",
   "background_color": "#001529",
   "icons": [
     {
-      "src": "logo.svg",
+      "src": "Xie Lao Ban.svg",
       "sizes": "192x192"
     },
     {
-      "src": "logo.svg",
+      "src": "Xie Lao Ban.svg",
       "sizes": "128x128"
     },
     {
-      "src": "logo.svg",
+      "src": "Xie Lao Ban.svg",
       "sizes": "512x512"
     }
   ]

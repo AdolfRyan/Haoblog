@@ -8,5 +8,10 @@
     "paths": {
       "@/*": ["./src/*"]
     }
-  }
+  },
+  "include": [
+    "src/**/*",
+    "src/access.ts",
+    "packages/admin/config/config.js"
+  ]
 }

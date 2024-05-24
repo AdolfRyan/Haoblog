@@ -9,12 +9,12 @@ const Settings = {
   fixSiderbar: true,
   colorWeak: false,
   // headerRender: false,
-  title: 'VanBlog',
+  title: 'HaoBlog',
   headerHeight: 48,
   splitMenus: false,
   // headerRender: false,
   pwa: true,
-  logo: '/logo.svg',
+  logo: '/Xie Lao Ban.svg',
   iconfontUrl: '',
 };
 export default Settings;

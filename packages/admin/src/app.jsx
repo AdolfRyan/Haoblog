@@ -1,15 +1,21 @@
 import Footer from '@/components/Footer';
-import { HomeOutlined, LogoutOutlined, ProjectOutlined } from '@ant-design/icons';
-import { PageLoading, SettingDrawer } from '@ant-design/pro-layout';
-import { message, Modal, notification } from 'antd';
+import { HomeOutlined, LogoutOutlined, ProjectOutlined } from '@ant-design/icons';  //  导入侧边栏需要的图标https://ant.design/components/icon-cn
+import { PageLoading, SettingDrawer } from '@ant-design/pro-layout';  // https://pro.ant.design/zh-CN/docs/layout/
+import { message, Modal, notification } from 'antd';  // https://ant.design/components/message-cn
 import moment from 'moment';
-import { history, Link } from 'umi';
+import { history, Link } from 'umi';  // Link:https://v3.umijs.org/zh-CN/docs/navigate-between-pages
 import defaultSettings from '../config/defaultSettings';
-import LogoutButton from './components/LogoutButton';
-import ThemeButton from './components/ThemeButton';
+import LogoutButton from './components/LogoutButton'; // 后台登出按钮
+import ThemeButton from './components/ThemeButton'; // 后台配色主题按钮
 import { fetchAllMeta } from './services/van-blog/api';
 import { checkUrl } from './services/van-blog/checkUrl';
 import { beforeSwitchTheme, getInitTheme, mapTheme } from './services/van-blog/theme';
+<<<<<<< HEAD
+=======
+import { log } from 'console';
+
+// 检查环境是否为开发环境
+>>>>>>> 5078213d (增加了admin后台调试代码+注释+图标)
 const isDev = process.env.UMI_ENV === 'dev';
 const loginPath = '/user/login';
 /** 获取用户信息比较慢的时候会展示一个 loading */
@@ -30,8 +36,13 @@ export async function getInitialState() {
       if (msg.statusCode == 233) {
         history.push('/init');
         return msg.data || {};
+<<<<<<< HEAD
       } else if (history.location.pathname == '/init' && msg.statusCode == 200) {
         history.push('/');
+=======
+      } else if (history.location.pathname == '/init' && msg.statusCode == 200) { //  已初始化
+        history.push('/');  // 若这行删掉, 则输入localhost:3002/init 不能导航到localhost:3002/admin/article
+>>>>>>> 5078213d (增加了admin后台调试代码+注释+图标)
       }
       return msg.data;
     } catch (error) {
@@ -167,20 +178,29 @@ window.onresize = handleSizeChange;
 //函数返回一个对象，定义了应用的布局和一些行为。例如，它定义了右侧内容渲染，页脚渲染，
 //页面改变时的行为，链接，以及子元素的渲染。它还处理了主题切换和设置更改。
 export const layout = ({ initialState, setInitialState }) => {
+<<<<<<< HEAD
   handleSizeChange();
+=======
+  handleSizeChange(); //  初始化头部显示状态
+
+>>>>>>> 5078213d (增加了admin后台调试代码+注释+图标)
   return {
     rightContentRender: () => {
       return (
         <div style={{ display: 'flex', alignItems: 'center' }}>
+<<<<<<< HEAD
           {/* 页面缩放时 右上角的主题按钮 */}
           <ThemeButton showText={false} />
           {/* 页面缩放时，右上角的登出按钮 */}
+=======
+          <ThemeButton showText={true} />
+>>>>>>> 5078213d (增加了admin后台调试代码+注释+图标)
           <LogoutButton
             key="logoutRightContent"
             trigger={
               <a>
                 <LogoutOutlined />
-                <span style={{ marginLeft: 6 }}>登出</span>
+                <span style={{ marginLeft: 100 }}>登出</span>
               </a>
             }
           />
@@ -207,6 +227,8 @@ export const layout = ({ initialState, setInitialState }) => {
     },
     onPageChange: () => {
       const { location } = history; // 如果没有登录，重定向到 login
+      console.log("app.jsx onPageChange(): " + JSON.stringify(history, null, 2)); // 添加调试信息
+
       if (location.pathname === '/init' && !initialState?.user) {
         return;
       }
@@ -217,20 +239,26 @@ export const layout = ({ initialState, setInitialState }) => {
         history.push('/');
       }
     },
+<<<<<<< HEAD
+=======
+
+
+    // 侧边栏导航
+>>>>>>> 5078213d (增加了admin后台调试代码+注释+图标)
     links: [
-      <a key="mainSiste" rel="noreferrer" target="_blank" href={'/'}>
+      <a key="mainSiste" rel="noreferrer" target="_blank" href={'/'} onClick={() => console.log('Link clicked: mainSiste')}>
         <HomeOutlined />
         <span>主站</span>
       </a>,
-      <Link key="AboutLink" to={'/about'}>
+      <Link key="AboutLink" to={'/about'} onClick={() => console.log('Link clicked: AboutLink')}>
         <ProjectOutlined />
         <span>关于</span>
       </Link>,
-      <ThemeButton key="themeBtn" showText={true} />,
+      <ThemeButton key="themeBtn" showText={true} onClick={() => console.log('Link clicked: themeBtn')} />,
       <LogoutButton
         key="logoutSider"
         trigger={
-          <a>
+          <a onClick={() => console.log('Link clicked: logoutSider')}>
             <LogoutOutlined />
             <span>登出</span>
           </a>
@@ -241,8 +269,16 @@ export const layout = ({ initialState, setInitialState }) => {
     // 自定义 403 页面
     // unAccessible: <div>unAccessible</div>,
     // 增加一个 loading 的状态
+<<<<<<< HEAD
+=======
+
+
+    // https://pro.ant.design/zh-CN/docs/dynamic-theme
+    // 渲染子组件并添加设置抽屉(目前似乎只有暗色模式和亮色模式的切换)
+>>>>>>> 5078213d (增加了admin后台调试代码+注释+图标)
     childrenRender: (children, props) => {
       // if (initialState?.loading) return <PageLoading />;
+      console.log("childrenRender");
       return (
         <>
           {children}

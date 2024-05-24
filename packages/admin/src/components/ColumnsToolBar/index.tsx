@@ -15,8 +15,8 @@ export default function (props: { nodes: any[]; outs: any[] }) {
     <Space>
       {props.outs}
       <Dropdown menu={{ items }} trigger={['click']}>
-        <a className="more-hover">
-          <svg
+        <a className="more-hover" onClick={() => console.log('ColumnsToolBar')}>
+          <svg  
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1024 1024"
             width="20"

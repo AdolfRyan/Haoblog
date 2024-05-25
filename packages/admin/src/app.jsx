@@ -10,12 +10,6 @@ import ThemeButton from './components/ThemeButton'; // 后台配色主题按钮
 import { fetchAllMeta } from './services/van-blog/api';
 import { checkUrl } from './services/van-blog/checkUrl';
 import { beforeSwitchTheme, getInitTheme, mapTheme } from './services/van-blog/theme';
-<<<<<<< HEAD
-=======
-import { log } from 'console';
-
-// 检查环境是否为开发环境
->>>>>>> 5078213d (增加了admin后台调试代码+注释+图标)
 const isDev = process.env.UMI_ENV === 'dev';
 const loginPath = '/user/login';
 /** 获取用户信息比较慢的时候会展示一个 loading */
@@ -36,13 +30,8 @@ export async function getInitialState() {
       if (msg.statusCode == 233) {
         history.push('/init');
         return msg.data || {};
-<<<<<<< HEAD
       } else if (history.location.pathname == '/init' && msg.statusCode == 200) {
         history.push('/');
-=======
-      } else if (history.location.pathname == '/init' && msg.statusCode == 200) { //  已初始化
-        history.push('/');  // 若这行删掉, 则输入localhost:3002/init 不能导航到localhost:3002/admin/article
->>>>>>> 5078213d (增加了admin后台调试代码+注释+图标)
       }
       return msg.data;
     } catch (error) {
@@ -178,23 +167,14 @@ window.onresize = handleSizeChange;
 //函数返回一个对象，定义了应用的布局和一些行为。例如，它定义了右侧内容渲染，页脚渲染，
 //页面改变时的行为，链接，以及子元素的渲染。它还处理了主题切换和设置更改。
 export const layout = ({ initialState, setInitialState }) => {
-<<<<<<< HEAD
   handleSizeChange();
-=======
-  handleSizeChange(); //  初始化头部显示状态
-
->>>>>>> 5078213d (增加了admin后台调试代码+注释+图标)
   return {
     rightContentRender: () => {
       return (
         <div style={{ display: 'flex', alignItems: 'center' }}>
-<<<<<<< HEAD
           {/* 页面缩放时 右上角的主题按钮 */}
           <ThemeButton showText={false} />
           {/* 页面缩放时，右上角的登出按钮 */}
-=======
-          <ThemeButton showText={true} />
->>>>>>> 5078213d (增加了admin后台调试代码+注释+图标)
           <LogoutButton
             key="logoutRightContent"
             trigger={
@@ -239,12 +219,6 @@ export const layout = ({ initialState, setInitialState }) => {
         history.push('/');
       }
     },
-<<<<<<< HEAD
-=======
-
-
-    // 侧边栏导航
->>>>>>> 5078213d (增加了admin后台调试代码+注释+图标)
     links: [
       <a key="mainSiste" rel="noreferrer" target="_blank" href={'/'} onClick={() => console.log('Link clicked: mainSiste')}>
         <HomeOutlined />
@@ -269,13 +243,6 @@ export const layout = ({ initialState, setInitialState }) => {
     // 自定义 403 页面
     // unAccessible: <div>unAccessible</div>,
     // 增加一个 loading 的状态
-<<<<<<< HEAD
-=======
-
-
-    // https://pro.ant.design/zh-CN/docs/dynamic-theme
-    // 渲染子组件并添加设置抽屉(目前似乎只有暗色模式和亮色模式的切换)
->>>>>>> 5078213d (增加了admin后台调试代码+注释+图标)
     childrenRender: (children, props) => {
       // if (initialState?.loading) return <PageLoading />;
       console.log("childrenRender");

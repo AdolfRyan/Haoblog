@@ -1,5 +1,6 @@
 // https://umijs.org/config/
 // Umi配置文件
+// Umi配置文件
 import MonacoWebpackPlugin from 'monaco-editor-webpack-plugin';
 import { defineConfig } from 'umi';
 import defaultSettings from './defaultSettings';

@@ -188,13 +188,8 @@ export const layout = ({ initialState, setInitialState }) => {
       );
     },
     // disableContentMargin: true,
+    //下面这个是页脚的渲染，显示了一些作者的名字。
     footerRender: () => {
-      // const { location } = history;
-      // const disableArr = ['/editor', '/site/comment'];
-      // if (disableArr.includes(location.pathname)) {
-      //   return false;
-      // }
-      // 目前 footer 只有发 console.log 一个功能了。
       return <div style={{ textAlign: 'center', padding: '20px 0', background: 'none' }}>
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <span style={{ margin: '0 10px' }}>曹钧杰</span>
@@ -209,12 +204,15 @@ export const layout = ({ initialState, setInitialState }) => {
       const { location } = history; // 如果没有登录，重定向到 login
       console.log("app.jsx onPageChange(): " + JSON.stringify(history, null, 2)); // 添加调试信息
 
+      // 如果没有登录，重定向到 login
       if (location.pathname === '/init' && !initialState?.user) {
         return;
       }
+      //如果用户未登录且当前路径不是登录路径，函数会将路径重定向到登录页面。
       if (!initialState?.user && ![loginPath, '/user/restore'].includes(location.pathname)) {
         history.push(loginPath);
       }
+      //如果当前路径是登录路径且用户已登录，函数会将路径重定向到首页。
       if (location.pathname == loginPath && Boolean(initialState?.user)) {
         history.push('/');
       }

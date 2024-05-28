@@ -11,7 +11,16 @@ export default function (props) {
   }, [initialState, history]);
 
   return (
-    <PageContainer title={null} extra={null} header={{ title: null, extra: null, ghost: true }}>
+    <PageContainer   tabList={[
+    {
+      tab: 'base information',
+      key: 'base',
+    },
+    {
+      tab: 'details',
+      key: 'info',
+    },
+  ]} title={null} extra={null} header={{ title: null, extra: null, ghost: true }}>
       <Spin spinning={version == '获取中'}>
         <ProCard>
           <div
@@ -57,32 +66,7 @@ export default function (props) {
                 API文档
               </a>
             </Space>
-            <Space style={{ marginTop: 8 }}>
-              <a
-                target={'_blank'}
-                rel="noreferrer"
-                href="https://github.com/Mereithhh/van-blog/issues/new/choose"
-              >
-                提交BUG
-              </a>
-              <a
-                target={'_blank'}
-                rel="noreferrer"
-                href="https://github.com/Mereithhh/van-blog/issues/new/choose"
-              >
-                提交案例
-              </a>
-              <a
-                target={'_blank'}
-                rel="noreferrer"
-                href="https://github.com/Mereithhh/van-blog#%E6%89%93%E8%B5%8F"
-              >
-                打赏
-              </a>
-              <a target={'_blank'} rel="noreferrer" href="https://jq.qq.com/?_wv=1027&k=5NRyK2Sw">
-                交流群
-              </a>
-            </Space>
+
           </div>
         </ProCard>
       </Spin>

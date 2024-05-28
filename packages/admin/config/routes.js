@@ -47,11 +47,6 @@ export default [
     path: '/static/img',
     hideInBreadcrumb: true, // 在面包屑中隐藏
     component: './Static/img',
-    // menu: {
-    //   flatMenu: true,
-    //   // hideInMenu: false,
-    //   // hideChildrenInMenu: false,
-    // },
   },
   {
     name: 'Test',

@@ -55,11 +55,12 @@ export default () => {
         <ProTable
           columns={columns}  // 表格列配置
           actionRef={actionRef}  // 操作表格的 Ref
-          cardBordered
+          cardBordered = {false} 
           rowSelection={{
             fixed: true,
             preserveSelectedRowKeys: true,
           }}
+          // 当被选中时，显示批量删除等等
           tableAlertOptionRender={({ selectedRowKeys, onCleanSelected }) => {
             return (
               <Space>
@@ -85,6 +86,7 @@ export default () => {
               </Space>
             );
           }}
+          //看不懂这个请求
           request={async (params = {}, sort, filter) => {
             // 构建请求参数
             const option = {};

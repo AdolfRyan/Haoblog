@@ -23,13 +23,6 @@ export default function (props) {
       autoFocusFirstInput
       submitTimeout={3000}
       onFinish={async (values) => {
-        if (location.hostname == 'blog-demo.mereith.com') {
-          Modal.info({
-            title: '演示站禁止新建文章！',
-            content: '本来是可以的，但有个人在演示站首页放黄色信息，所以关了这个权限了。',
-          });
-          return;
-        }
         const washedValues = {};
         for (const [k, v] of Object.entries(values)) {
           washedValues[k.replace('C', '')] = v;

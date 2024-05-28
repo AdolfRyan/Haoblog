@@ -32,9 +32,11 @@ export default function () {
     { afterSave: 'stay', useLocalCache: 'close' },
     'editorConfig',
   );
+  //这是获取和处理路由参数
   const type = history.location.query?.type || 'article';
   const getCacheKey = () => `${type}-${history.location.query?.id || '0'}`;
 
+  //键盘快捷键保存 Ctrl + S / Cmd + S
   useEffect(() => {
     window.addEventListener('keydown', onKeyDown);
     return () => {
@@ -165,6 +167,7 @@ export default function () {
     }
   }, []);
 
+  //保存编辑内容
   const saveFn = async () => {
     const v = value;
     setLoading(true);
@@ -187,16 +190,9 @@ export default function () {
     }
     setLoading(false);
   };
-
+  //保存编辑内容
   const handleSave = async () => {
-    if (location.hostname == 'blog-demo.mereith.com' && type != 'draft') {
-      Modal.info({
-        title: '演示站禁止修改此信息！',
-        content: '本来是可以的，但有个人在演示站首页放黄色信息，所以关了这个权限了。',
-      });
-      return;
-    }
-    // 先检查一下有没有 more .
+
     let hasMore = true;
     if (['article', 'draft'].includes(history.location.query?.type)) {
       if (!value?.includes('<!-- more -->')) {
@@ -233,6 +229,7 @@ export default function () {
       onOk: saveFn,
     });
   };
+  // 导出功能
   const handleExport = async () => {
     const md = parseObjToMarkdown(currObj);
     const data = new Blob([md]);
@@ -242,6 +239,7 @@ export default function () {
     link.download = `${currObj?.title || '关于'}.md`;
     link.click();
   };
+  // 导入功能
   const handleImport = async (file) => {
     setLoading(true);
     try {
@@ -259,6 +257,8 @@ export default function () {
     }
     setLoading(false);
   };
+
+  // 操作菜单
   const actionMenu = (
     <Menu
       items={[
@@ -448,6 +448,7 @@ export default function () {
         ),
         extra: [
           <Button key="extraSaveBtn" type="primary" onClick={handleSave}>
+            {/* 保存按钮 */}
             {<SaveTip />}
           </Button>,
           <Button
@@ -483,6 +484,7 @@ export default function () {
             </a>
           </Upload>
         </div>
+        {/* 文本编辑器 */}
         <Editor
           loading={loading}
           setLoading={setLoading}

@@ -1,3 +1,4 @@
+// 目前出现在文章管理的列表页
 import ColumnsToolBar from '@/components/ColumnsToolBar';
 import UpdateModal from '@/components/UpdateModal';
 import { deleteArticle, getAllCategories, getArticleById, getTags } from '@/services/van-blog/api';

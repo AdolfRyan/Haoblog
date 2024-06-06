@@ -21,11 +21,6 @@ export default function (props: {
   children: any;
 }) {
   console.log(props.children)
-  // console.log(props.sideBar)
-  // console.log(props.option);
-  // console.log("css", props.option.customCss);
-  // console.log("html", props.option.customHtml);
-  // console.log("script", decode(props.option.customScript as string));
   const [isOpen, setIsOpen] = useState(false);
   const { current } = useRef({ hasInit: false });
   const [theme, setTheme] = useState<RealThemeType>(getTheme("auto"));
@@ -52,7 +47,6 @@ export default function (props: {
         <meta name="description" content={props.option.description}></meta>
         <meta name="robots" content="index, follow"></meta>
       </Head>
-      {/* 返回顶部按钮 */}
       <BackToTopBtn></BackToTopBtn>
       {props.option.baiduAnalysisID != "" &&
         process.env.NODE_ENV != "development" && (

@@ -12,9 +12,6 @@ package-lock.json
 # jest
 /coverage
 
-# docs api文档
-/docs
-
 # webpack 配置
 scripts
 

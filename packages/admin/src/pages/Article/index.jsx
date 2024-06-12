@@ -38,7 +38,7 @@ export default () => {
       className="t-8"
       header={{ title: null, extra: null, ghost: true }}
     >
-      {/* <RcResizeObserver
+      <RcResizeObserver
         key="resize-observer"
         onResize={(offset) => {
           const r = offset.width < 1000;
@@ -192,7 +192,7 @@ export default () => {
             />,
           ]}
         />
-      </RcResizeObserver> */}
+      </RcResizeObserver>
     </PageContainer>
   );
 };

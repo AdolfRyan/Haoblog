@@ -6,7 +6,6 @@ import { TimeLinePageProps } from "../pages/timeline";
 import { CategoryPageProps } from "../pages/category";
 import { getAuthorCardProps, getLayoutProps } from "./getLayoutProps";
 import { washArticlesByKey } from "./washArticles";
-import { AboutPageProps } from "../pages/about";
 import { TagPagesProps } from "../pages/tag/[tag]";
 import { PostPagesProps } from "../pages/post/[id]";
 import { PagePagesProps } from "../pages/page/[p]";
@@ -17,7 +16,6 @@ import {
   getArticlesByOption,
   getArticlesByTimeLine,
 } from "../api/getArticles";
-import { LinkPageProps } from "../pages/link";
 
 //获取主页有关参数
 export async function getIndexPageProps(): Promise<IndexPageProps> {
@@ -75,55 +73,8 @@ export async function getCategoryPageProps(): Promise<CategoryPageProps> {
     sortedArticles,
   };
 }
-//获取友链页有关参数
-export async function getLinkPageProps(): Promise<LinkPageProps> {
-  const data = await getPublicMeta();
-  const layoutProps = getLayoutProps(data);
-  const authorCardProps = getAuthorCardProps(data);
-  return {
-    layoutProps,
-    authorCardProps,
-    links: data.meta.links,
-  };
-}
-//获取关于页有关参数
-export async function getAboutPageProps(): Promise<AboutPageProps> {
-  const data = await getPublicMeta();
-  const layoutProps = getLayoutProps(data);
-  const authorCardProps = getAuthorCardProps(data);
-  const about = data.meta.about;
-  let showDonateInfo: "true" | "false" = "true";
-  if (data.meta.siteInfo?.showDonateInfo == "false") {
-    showDonateInfo = "false";
-  }
-  let showDonateInAbout: "true" | "false" = "false";
 
-  if (data.meta.siteInfo?.showDonateInAbout == "true") {
-    showDonateInAbout = "true";
-  }
-  if (data.meta.siteInfo?.showDonateButton == "false") {
-    showDonateInAbout = "false";
-  }
-  const payProps = {
-    pay: [
-      data.meta.siteInfo?.payAliPay || "",
-      data.meta.siteInfo?.payWechat || "",
-    ],
-    payDark: [
-      data.meta.siteInfo?.payAliPayDark || "",
-      data.meta.siteInfo?.payWechatDark || "",
-    ],
-  };
-  return {
-    showDonateInfo,
-    layoutProps,
-    authorCardProps,
-    about,
-    donates: data.meta?.rewards || [],
-    showDonateInAbout,
-    ...payProps,
-  };
-}
+
 //获取标签页有关参数
 export async function getTagPagesProps(
   currTag: string

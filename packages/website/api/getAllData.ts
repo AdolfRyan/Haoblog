@@ -145,9 +145,9 @@ const defaultMeta: MetaProps = {
   siteInfo: {
     author: "作者名字",
     authorDesc: "作者描述",
-    authorLogo: "/logo.svg",
-    siteLogo: "/logo.svg",
-    favicon: "/logo.svg",
+    authorLogo: "/crab.svg",
+    siteLogo: "/crab.svg",
+    favicon: "/crab.svg",
     siteName: "VanBlog",
     siteDesc: "Vanblog",
     copyrightAggreement: "",

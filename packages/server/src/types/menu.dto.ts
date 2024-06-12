@@ -30,16 +30,4 @@ export const defaultMenu: MenuItem[] = [
     value: '/timeline',
     level: 0,
   },
-  {
-    id: 4,
-    name: '友链',
-    value: '/link',
-    level: 0,
-  },
-  {
-    id: 5,
-    name: '关于',
-    value: '/about',
-    level: 0,
-  },
 ];

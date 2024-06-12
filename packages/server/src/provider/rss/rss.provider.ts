@@ -63,12 +63,12 @@ export class RssProvider {
         meta.siteInfo.favicon ||
         meta.siteInfo.siteLogo ||
         meta.siteInfo.authorLogo ||
-        `${siteUrl}logo.svg`;
+        `${siteUrl}crab.svg`;
       const siteLogo =
         meta.siteInfo.siteLogo ||
         meta.siteInfo.authorLogo ||
         meta.siteInfo.favicon ||
-        `${siteUrl}logo.svg`;
+        `${siteUrl}crab.svg`;
       const date = new Date();
       const feed = new Feed({
         title: meta.siteInfo.siteName,

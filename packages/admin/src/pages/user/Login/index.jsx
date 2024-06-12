@@ -53,7 +53,7 @@ const Login = () => {
       <div className={styles.content}>
         <LoginForm
           className={styles.loginForm}
-          logo={<img alt="logo" src="/logo.svg" />}
+          logo={<img alt="logo" src="/crab.svg" />}
           title="VanBlog"
           subTitle={'VanBlog 博客管理后台'}
           initialValues={{

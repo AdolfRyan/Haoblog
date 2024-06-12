@@ -27,7 +27,6 @@ export default function (props: { type: "search" | "esc" }) {
     }
   }, [])
   if (props.type == "search") {
-    console.log("testtsets")
     return (
       <div className="flex items-center">
         <span

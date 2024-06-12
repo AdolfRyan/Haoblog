@@ -363,21 +363,6 @@ export default function () {
           >
             返回
           </Button>,
-          <Button
-            key="docBtn"
-            onClick={() => {
-              if (type == 'pipeline') {
-                window.open('https://vanblog.mereith.com/features/pipeline.html', '_blank');
-              } else {
-                window.open(
-                  'https://vanblog.mereith.com/feature/advance/customPage.html',
-                  '_blank',
-                );
-              }
-            }}
-          >
-            文档
-          </Button>,
         ],
         breadcrumb: {},
       }}

@@ -60,7 +60,6 @@ const resetHttps = async (client, dbName) => {
     const col = db.collection('settings');
     const result = await col.deleteOne({ type: 'https' });
     console.log('删除 HTTPS 设置成功，删除的条目数：', result.deletedCount);
-    console.log('重启 vanblog 后生效');
   } catch (err) {
     console.log('重制 HTTPS 出错：', err);
   }

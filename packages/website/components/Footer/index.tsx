@@ -61,13 +61,7 @@ export default function ({
         {/* Poweredby****** */}
         <p className="footer-powered-by-Haoblog">
           Powered By 陈浩熙 陈大钧 曹钧杰 江翰翔 刘昊&nbsp;
-          {/* <a
-            href="https://vanblog.mereith.com"
-            target={"_blank"}
-            className="hover:text-gray-900 dark:hover:text-dark-hover transition ua ua-link"
-          >
-            VanBlog <span>{version}</span>
-          </a> */}
+
         </p>
           {/* 2024 - 2024 */}
         <p className="select-none footer-copy-right">

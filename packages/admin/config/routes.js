@@ -15,7 +15,7 @@ export default [
     name: '分析概览',
     icon: 'smile',
     component: './Welcome',
-    access: 'isAdmin', // 仅管理员可访问, 会调用 src/access.ts 中返回的 isAdmin 进行鉴权
+    access: 'isAdmin', 
   },
   { name: '文章管理', icon: 'form', path: '/article', component: './Article' }, // 文章管理页面
   {
@@ -58,7 +58,6 @@ export default [
     routes: [
       { name: '数据管理', path: '/site/data', component: './DataManage' }, // 数据管理页面
       { name: '评论管理', path: '/site/comment', component: './CommentManage' }, // 评论管理页面
-      { name: '流水线', path: '/site/pipeline', component: './Pipeline' }, // 流水线页面
       { name: '系统设置', path: '/site/setting', component: './SystemConfig' }, // 系统设置页面
       {
         name: '自定义页面',

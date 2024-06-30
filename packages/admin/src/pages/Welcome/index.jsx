@@ -7,22 +7,14 @@ import Viewer from './tabs/viewer';
 const Welcome = () => {
   const [tab, setTab] = useTab('overview', 'tab');
 
-  // const { initialState } = useModel('@@initialState');
   const tabMap = {
     overview: <OverView />,
     viewer: <Viewer />,
     article: <Article />,
   };
-  // const showCommentBtn = useMemo(() => {
-  //   const url = initialState?.walineServerUrl;
-  //   if (!url || url == '') {
-  //     return false;
-  //   }
-  //   return true;
-  // }, [initialState]);
+
   return (
     <PageContainer
-      // title={null}
       extra={null}
       header={{ title: null, extra: null, ghost: true }}
       className={style.thinheader}
@@ -45,38 +37,6 @@ const Welcome = () => {
         },
       ]}
       title={null}
-      // extra={
-      //   <Space>
-      //     {showCommentBtn && (
-      //       <Button
-      //         type="primary"
-      //         onClick={() => {
-      //           const urlRaw = data?.link?.walineServerUrl || '';
-      //           if (urlRaw == '') {
-      //             return;
-      //           }
-      //           const u = new URL(urlRaw).toString();
-      //           window.open(`${u}ui`, '_blank');
-      //         }}
-      //       >
-      //         评论管理
-      //       </Button>
-      //     )}
-      //     <Button
-      //       type="primary"
-      //       onClick={() => {
-      //         const urlRaw = data?.link?.baseUrl || '';
-      //         if (urlRaw == '') {
-      //           return;
-      //         }
-
-      //         window.open(`${urlRaw}`, '_blank');
-      //       }}
-      //     >
-      //       前往主站
-      //     </Button>
-      //   </Space>
-      // }
     >
       {tabMap[tab]}
     </PageContainer>

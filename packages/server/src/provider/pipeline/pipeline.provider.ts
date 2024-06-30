@@ -3,7 +3,7 @@ import { Logger } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { PipelineDocument } from 'src/scheme/pipeline.schema';
-import { VanblogSystemEvent, VanblogSystemEventNames } from 'src/types/event';
+import { HAOBLOGSystemEvent, HAOBLOGSystemEventNames } from 'src/types/event';
 import { CreatePipelineDto, UpdatePipelineDto } from 'src/types/pipeline.dto';
 import { sleep } from 'src/utils/sleep';
 import { spawnSync } from 'child_process';
@@ -32,7 +32,7 @@ export class PipelineProvider {
   }
 
   checkEvent(eventName: string) {
-    if (VanblogSystemEventNames.includes(eventName)) {
+    if (HAOBLOGSystemEventNames.includes(eventName)) {
       return true;
     }
     return false;
@@ -81,7 +81,7 @@ export class PipelineProvider {
 
   async createPipeline(pipeline: CreatePipelineDto) {
     if (!this.checkEvent(pipeline.eventName)) {
-      throw new NotFoundException('Event not found in VanblogEventNames');
+      throw new NotFoundException('Event not found in HAOBLOGEventNames');
     }
     const id = await this.getNewId();
     let script = pipeline.script;
@@ -145,7 +145,7 @@ export class PipelineProvider {
     return result;
   }
 
-  async dispatchEvent(eventName: VanblogSystemEvent, data?: any) {
+  async dispatchEvent(eventName: HAOBLOGSystemEvent, data?: any) {
     const pipelines = await this.getPipelinesByEvent(eventName);
     const results: CodeResult[] = [];
     for (const pipeline of pipelines) {

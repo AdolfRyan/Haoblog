@@ -18,7 +18,7 @@ body:
     id: url
     attributes:
       label: 网站地址 | Website URL
-      description: 请提供您用 VanBlog 搭建的网站地址 | Please supply a website url which powered by VanBlog.
+      description: 请提供您用 HAOBLOG 搭建的网站地址 | Please supply a website url which powered by HAOBLOG.
       placeholder: ex. https://blog-demo.mereith.com
     validations:
       required: true

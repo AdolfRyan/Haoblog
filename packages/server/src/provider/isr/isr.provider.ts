@@ -48,7 +48,7 @@ export class ISRProvider {
     this.logger.log('触发全量渲染完成！');
   }
   async activeAll(info?: string, delay?: number, activeConfig?: ActiveConfig) {
-    if (process.env['VANBLOG_DISABLE_WEBSITE'] === 'true') {
+    if (process.env['HAOBLOG_DISABLE_WEBSITE'] === 'true') {
       return;
     }
     if (this.timer) {

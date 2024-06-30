@@ -2,7 +2,7 @@
 
 const { MongoClient } = require('mongodb');
 
-const uri = 'mongodb://mongo:27017/vanBlog?authSource=admin';
+const uri = 'mongodb://mongo:27017/HAOBLOG?authSource=admin';
 
 const readString = (prompt) => {
   process.stdout.write(prompt);

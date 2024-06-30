@@ -4,7 +4,7 @@ import { AdminGuard } from 'src/provider/auth/auth.guard';
 import { Request } from 'express';
 import { PipelineProvider } from 'src/provider/pipeline/pipeline.provider';
 import { CreatePipelineDto } from 'src/types/pipeline.dto';
-import { VanblogSystemEvents } from 'src/types/event';
+import { HAOBLOGSystemEvents } from 'src/types/event';
 import { ApiToken } from 'src/provider/swagger/token';
 
 @ApiTags('pipeline')
@@ -25,7 +25,7 @@ export class PipelineController {
   async getPipelineConfig(@Req() req: Request) {
     return {
       statusCode: 200,
-      data: VanblogSystemEvents,
+      data: HAOBLOGSystemEvents,
     };
   }
   @Get('/:id')

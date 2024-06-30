@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
-import { VanblogEventType } from 'src/types/event';
+import { HAOBLOGEventType } from 'src/types/event';
 export type PipelineDocument = Pipeline & Document;
 
 @Schema()
@@ -12,7 +12,7 @@ export class Pipeline extends Document {
   name: string;
 
   @Prop({ index: true })
-  eventType: VanblogEventType;
+  eventType: HAOBLOGEventType;
 
   @Prop({ index: true })
   description: string;

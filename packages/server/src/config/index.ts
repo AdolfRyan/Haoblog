@@ -18,7 +18,7 @@ export const loadMongoUrl = () => {
       port: loadConfig('database.port', '27017'),
       user: loadConfig('database.user', ''),
       passwd: loadConfig('database.passwd', ''),
-      name: loadConfig('database.name', 'vanBlog'),
+      name: loadConfig('database.name', 'HAOBLOG'),
     };
 
     let authInfo = '';

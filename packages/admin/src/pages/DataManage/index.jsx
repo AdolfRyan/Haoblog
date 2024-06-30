@@ -34,22 +34,7 @@ export default function () {
           tab: '标签管理',
           key: 'tag',
         },
-        {
-          tab: '导航配置',
-          key: 'menuConfig',
-        },
-        {
-          tab: '捐赠管理',
-          key: 'donateInfo',
-        },
-        {
-          tab: '友情链接',
-          key: 'links',
-        },
-        {
-          tab: '联系方式',
-          key: 'socials',
-        },
+
       ]}
       onTabChange={setTab}
     >

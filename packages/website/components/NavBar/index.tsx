@@ -136,10 +136,10 @@ export default function (props: {
             {/* 右上角搜索栏等 */}
             <div className="flex nav-action">
               <div
-                onClick={() => {
-                  setShowSearch(true);
-                  document.body.style.overflow = "hidden";
-                }}
+                // onClick={() => {
+                //   setShowSearch(true);
+                //   document.body.style.overflow = "hidden";
+                // }}
                 title="搜索"
                 className="flex group transform hover:scale-110 transition-all select-none cursor-pointer"
               >
@@ -170,10 +170,7 @@ export default function (props: {
               </div>
               {/* 主题按钮 */}
               <ThemeButton defaultTheme={props.defaultTheme} />
-              {/* RSS订阅按钮 */}
-              {props.showRSS == "true" && (
-                <RssButton showAdminButton={props.showAdminButton == "true"} />
-              )}
+
               {/* 管理后台 */}
               {props.showAdminButton == "true" && <AdminButton />}
             </div>

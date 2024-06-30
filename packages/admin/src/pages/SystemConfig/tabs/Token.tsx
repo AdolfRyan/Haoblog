@@ -75,22 +75,7 @@ export default function () {
                   title: 'Token 管理功能介绍',
                   content: (
                     <div>
-                      <p>创建的 Api Token 可以用来调用 VanBlog 的 API</p>
-                      <p>结合 API 文档，您可以做到很多有意思的事情。</p>
-                      <p>API 文档现在比较水，会慢慢完善的，未来会有 API Playgroud，敬请期待。</p>
-                      <p>
-                        PS：暂时没必要通过 API
-                        开发自己的前台，后面会出主题功能（完善的文档和开发指南，不限制技术栈），届时再开发会更好。
-                      </p>
-                      <p>
-                        <a
-                          target="_blank"
-                          rel="noreferrer"
-                          href="https://vanblog.mereith.com/advanced/token.html"
-                        >
-                          相关文档
-                        </a>
-                      </p>
+
                     </div>
                   ),
                 });

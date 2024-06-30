@@ -48,7 +48,7 @@ export default function (props) {
         placeholder="请输入标题"
         rules={[{ required: true, message: '这是必填项' }]}
       />
-      <AuthorField />
+      {/* <AuthorField />
       <ProFormText
         width="md"
         id="topC"
@@ -63,7 +63,7 @@ export default function (props) {
         label="自定义路径名"
         tooltip="文章发布后的路径将为 /post/[自定义路径名]，如果未设置则使用文章 id 作为路径名"
         placeholder="留空或为空则使用 id 作为路径名"
-      />
+      /> */}
       <ProFormSelect
         mode="tags"
         tokenSeparators={[',']}
@@ -95,7 +95,7 @@ export default function (props) {
           });
         }}
       />
-      <ProFormDateTimePicker
+      {/* <ProFormDateTimePicker
         placeholder="不填默认为此刻"
         name="createdAtC"
         id="createdAtC"
@@ -160,7 +160,7 @@ export default function (props) {
         label="版权声明"
         tooltip="设置后会替换掉文章页底部默认的版权声明文字，留空则根据系统设置中的相关选项进行展示"
         placeholder="设置后会替换掉文章底部默认的版权"
-      />
+      /> */}
     </ModalForm>
   );
 }

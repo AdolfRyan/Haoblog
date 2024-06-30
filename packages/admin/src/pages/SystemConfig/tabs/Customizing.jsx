@@ -68,7 +68,7 @@ export default function () {
           <p>{helpMap[tab]}</p>
           <a
             target="_blank"
-            href="https://vanblog.mereith.com/feature/advance/customizing.html"
+            href=""
             rel="noreferrer"
           >
             帮助文档

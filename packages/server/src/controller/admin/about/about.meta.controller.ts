@@ -29,11 +29,11 @@ export class AboutMetaController {
     if (config.demo && config.demo == 'true') {
       return {
         statusCode: 401,
-        message: '演示站禁止修改此项！',
+        message: 'error！',
       };
     }
     const data = await this.metaProvider.updateAbout(updateAboutDto.content);
-    this.isrProvider.activeAbout('更新 about 触发增量渲染！');
+    this.isrProvider.activeAbout('');
     return {
       statusCode: 200,
       data,

@@ -51,7 +51,7 @@ async function bootstrap() {
   });
 
   const config = new DocumentBuilder()
-    .setTitle('VanBlog API Reference')
+    .setTitle('API Reference')
     .setDescription('API Token 请在后台设置页面获取，请添加到请求头的 token 字段中进行鉴权。')
     .setVersion('1.0')
     .build();

@@ -20,7 +20,7 @@ export default function () {
       content: (
         <div>
           <p>
-            Vanblog 内嵌了{' '}
+             内嵌了{' '}
             <a target={'_blank'} rel="noreferrer" href="https://waline.js.org/">
               Waline
             </a>{' '}
@@ -36,7 +36,7 @@ export default function () {
             <a
               target={'_blank'}
               rel="noreferrer"
-              href="https://vanblog.mereith.com/feature/basic/comment.html"
+              href=""
             >
               帮助文档
             </a>

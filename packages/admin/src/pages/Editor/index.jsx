@@ -119,7 +119,7 @@ export default function () {
         } else {
           setValue(data?.content || '');
         }
-        document.title = `关于 - VanBlog 编辑器`;
+        document.title = `关于 -  编辑器`;
         setCurrObj(data);
       }
       if (type == 'article' && id) {
@@ -133,7 +133,7 @@ export default function () {
         } else {
           setValue(data?.content || '');
         }
-        document.title = `${data?.title || ''} - VanBlog 编辑器`;
+        document.title = `${data?.title || ''} -  编辑器`;
         setCurrObj(data);
       }
       if (type == 'draft' && id) {
@@ -148,7 +148,7 @@ export default function () {
           setValue(data?.content || '');
         }
         setCurrObj(data);
-        document.title = `${data?.title || ''} - VanBlog 编辑器`;
+        document.title = `${data?.title || ''} - 编辑器`;
       }
       setLoading(false);
     },
@@ -210,19 +210,7 @@ export default function () {
       title: `确定保存吗？${hasTags ? '' : '此文章还没设置标签呢'}`,
       content: hasMore ? undefined : (
         <div style={{ marginTop: 8 }}>
-          <p>缺少完整的 more 标记！</p>
-          <p>这可能会造成阅读全文前的图片语句被截断从而无法正常显示！</p>
-          <p>默认将截取指定的字符数量作为阅读全文前的内容。</p>
-          <p>
-            您可以点击编辑器工具栏最后第一个按钮在合适的地方插入标记。
-            <a
-              target={'_blank'}
-              rel="noreferrer"
-              href="https://vanblog.mereith.com/feature/basic/editor.html#%E4%B8%80%E9%94%AE%E6%8F%92%E5%85%A5-more-%E6%A0%87%E8%AE%B0"
-            >
-              相关文档
-            </a>
-          </p>
+          <p>缺少完整的 标记！</p>
           <img src="/more.png" alt="more" width={200}></img>
         </div>
       ),
@@ -421,7 +409,7 @@ export default function () {
           key: 'helpBtn',
           label: '帮助文档',
           onClick: () => {
-            window.open('https://vanblog.mereith.com/feature/basic/editor.html', '_blank');
+            window.open('', '_blank');
           },
         },
       ]}

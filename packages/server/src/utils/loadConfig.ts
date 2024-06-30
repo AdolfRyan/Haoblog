@@ -17,7 +17,7 @@ rawConfigs = rawConfigs
   .map((content) => yaml.parse(content));
 
 if (rawConfigs.length === 0) {
-  console.log('未检测到 Vanblog 配置文件, 即将从环境变量中读取, 或采用默认配置');
+  console.log('未检测到配置文件, 即将从环境变量中读取, 或采用默认配置');
   rawConfigs.push([]);
 }
 

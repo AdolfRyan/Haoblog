@@ -24,11 +24,11 @@ const InitPage = () => {
         <ProCard
           title={
             <div>
-              <p style={{ fontSize: 20, marginBottom: 0 }}>欢迎使用 VanBlog 个人博客系统</p>
+              <p style={{ fontSize: 20, marginBottom: 0 }}>欢迎使用haoBlog 个人博客系统</p>
               <a
                 target={'_blank'}
                 rel="noreferrer"
-                href="https://vanblog.mereith.com/feature/basic/setting.html"
+                href=" "
               >
                 帮助文档
               </a>
@@ -77,13 +77,7 @@ const InitPage = () => {
                 label="登录用户名"
                 placeholder={'请输入登录用户名'}
               ></ProFormText>
-              {/* <ProFormText
-                name="nickname"
-                required={true}
-                rules={[{ required: true, message: '这是必填项' }]}
-                label="昵称"
-                placeholder={'请输入昵称（显示的名字）'}
-              ></ProFormText> */}
+
               <ProFormText.Password
                 name="password"
                 required={true}
@@ -120,7 +114,7 @@ const InitPage = () => {
             >
               <Alert
                 type="info"
-                message="默认的上传图片会到内置图床，如需配置 oss 图床，可在初始化后去设置页更改。初始化页面所有配置都可在初始化后进入后台修改。"
+                message="初始化页面所有配置都可在初始化后进入后台修改。"
                 style={{ marginBottom: 8 }}
               ></Alert>
               <SiteInfoForm
@@ -131,10 +125,10 @@ const InitPage = () => {
                 isInit={true}
               />
             </StepsForm.StepForm>
-            <StepsForm.StepForm name="step3" title={'高级配置'} formRef={formRef2}>
+            {/* <StepsForm.StepForm name="step3" title={'高级配置'} formRef={formRef2}>
               <Alert
                 type="info"
-                message="默认的上传图片会到内置图床，如需配置 oss 图床，可在初始化后去设置页更改。初始化页面所有配置都可在初始化后进入后台修改。"
+                message="初始化页面所有配置都可在初始化后进入后台修改。"
                 style={{ marginBottom: 8 }}
               ></Alert>
               <SiteInfoForm
@@ -143,9 +137,9 @@ const InitPage = () => {
                 showLayout={false}
                 form={formRef2}
                 isInit={true}
-              />
-            </StepsForm.StepForm>
-            <StepsForm.StepForm name="step4" title={'布局配置'}>
+              /> 
+            </StepsForm.StepForm> */}
+            {/* <StepsForm.StepForm name="step4" title={'布局配置'}>
               <Alert
                 type="info"
                 message="初始化页面所有配置都可在初始化后进入后台修改。"
@@ -157,8 +151,8 @@ const InitPage = () => {
                 showOption={false}
                 showLayout={true}
                 form={null}
-              />
-            </StepsForm.StepForm>
+              /> 
+            </StepsForm.StepForm> */}
           </StepsForm>
         </ProCard>
       </div>

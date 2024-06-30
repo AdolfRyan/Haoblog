@@ -96,7 +96,7 @@ export async function getInitialState() {
                 {`更新日志:\t`}
                 <a
                   target={'_blank'}
-                  href="https://vanblog.mereith.com/ref/changelog.html"
+                  href=""
                   rel="noreferrer"
                 >
                   点击查看
@@ -106,7 +106,7 @@ export async function getInitialState() {
                 {`更新方法:\t`}
                 <a
                   target={'_blank'}
-                  href="https://vanblog.mereith.com/guide/update.html#%E5%8D%87%E7%BA%A7%E6%96%B9%E6%B3%95"
+                  href=""
                   rel="noreferrer"
                 >
                   点击查看

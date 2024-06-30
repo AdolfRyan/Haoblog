@@ -52,7 +52,7 @@ export default function (props) {
         message={
           <div>
             <p>可点击按钮查看 Caddy 运行日志或配置排查错误。</p>
-            <p>access 日志可进入容器 /var/log/vanblog-access.log 查看</p>
+            <p>access 日志可进入容器 /var/log/haoblog-access.log 查看</p>
           </div>
         }
         style={{ marginBottom: 20 }}

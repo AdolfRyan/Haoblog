@@ -75,7 +75,7 @@ export default function (props) {
             <a
               rel="noreferrer"
               target="_blank"
-              href="https://vanblog.mereith.com/feature/advance/isr.html"
+              href=""
             >
               帮助文档
             </a>

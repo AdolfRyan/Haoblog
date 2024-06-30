@@ -57,14 +57,6 @@ export default [
     access: 'isAdmin', // 仅管理员可访问
     routes: [
       { name: '数据管理', path: '/site/data', component: './DataManage' }, // 数据管理页面
-      { name: '评论管理', path: '/site/comment', component: './CommentManage' }, // 评论管理页面
-      { name: '系统设置', path: '/site/setting', component: './SystemConfig' }, // 系统设置页面
-      {
-        name: '自定义页面',
-        path: '/site/customPage',
-        component: './CustomPage',
-      },
-      { name: '日志管理', path: '/site/log', component: './LogManage' }, // 日志管理页面
     ],
   },
 

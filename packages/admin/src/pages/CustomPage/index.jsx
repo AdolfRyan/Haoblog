@@ -106,7 +106,7 @@ export default function () {
           <p>多文件页面后续会演进成“文件管理”功能～</p>
           <a
             target="_blank"
-            href="https://vanblog.mereith.com/feature/advance/customPage.html"
+            href=""
             rel="noreferrer"
           >
             帮助文档

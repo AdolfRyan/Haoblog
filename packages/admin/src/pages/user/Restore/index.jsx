@@ -27,9 +27,7 @@ export default function () {
           style={{ marginBottom: 12 }}
           message={
             <p style={{ marginBottom: 0 }}>
-              VanBlog
-              会在每次启动时在日志中打印随机的恢复密钥，同时也会将其写入到您挂载的日志目录中的
-              restore.key 文件中。
+
             </p>
           }
         ></Alert>

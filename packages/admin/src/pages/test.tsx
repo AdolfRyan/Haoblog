@@ -48,24 +48,6 @@ export default function (props) {
             </div>
             <p align="center">一款简洁实用优雅的高性能个人博客系统</p>
 
-            <Space>
-              <a target={'_blank'} rel="noreferrer" href="https://github.com/Mereithhh/van-blog">
-                Github
-              </a>
-              <a target={'_blank'} rel="noreferrer" href="https://vanblog.mereith.com">
-                项目文档
-              </a>
-              <a
-                target={'_blank'}
-                rel="noreferrer"
-                href="https://vanblog.mereith.com/changelog.html"
-              >
-                更新日志
-              </a>
-              <a target={'_blank'} rel="noreferrer" href="/swagger">
-                API文档
-              </a>
-            </Space>
 
           </div>
         </ProCard>

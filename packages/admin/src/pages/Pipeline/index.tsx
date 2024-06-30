@@ -107,15 +107,6 @@ export default function () {
           <TipTitle title="流水线" tip="流水线允许用户在特定事件时，自动触发执行自定义代码。" />
         ),
       }}
-      extra={
-        <Button
-          onClick={() => {
-            window.open('https://vanblog.mereith.com/features/pipeline.html', '_blank');
-          }}
-        >
-          帮助文档
-        </Button>
-      }
     >
       <ProTable
         actionRef={actionRef}

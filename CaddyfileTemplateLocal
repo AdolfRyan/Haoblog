@@ -17,7 +17,7 @@
 (van) {
   encode zstd gzip
 	log {
-		output file /var/log/vanblog-access.log
+		output file /var/log/haoblog-access.log
 		format json
 	}
   tls {

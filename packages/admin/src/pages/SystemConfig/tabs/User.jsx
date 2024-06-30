@@ -135,7 +135,7 @@ export default function () {
                         <a
                           target="_blank"
                           rel="noreferrer"
-                          href="https://vanblog.mereith.com/feature/advance/collaborator.html"
+                          href=""
                         >
                           帮助文档
                         </a>

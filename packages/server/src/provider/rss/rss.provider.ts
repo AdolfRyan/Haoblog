@@ -80,7 +80,7 @@ export class RssProvider {
         favicon: favicon,
         copyright: `All rights reserved ${date.getFullYear()}, ${meta.siteInfo.author}`,
         updated: date,
-        generator: 'Feed for VanBlog',
+        generator: 'Feed for ',
         feedLinks: {
           rss2: `${siteUrl}rss/feed.xml`, // xml format
           json: `${siteUrl}rss/feed.json`, // json fromat

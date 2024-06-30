@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@vanblog/theme-default",
+  "name": "@haoblog/theme-default",
   "scripts": {
     "anlysis": "cross-env ANALYZE=true next build",
     "build": "cross-env isBuild=t next build",

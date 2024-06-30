@@ -1,6 +1,6 @@
 import { useState } from 'react';
 export const useCacheState = (init, key) => {
-  const k = `vanblog-admin-${key}`;
+  const k = `haoblog-admin-${key}`;
   const [currValue, setCuttValue] = useState(JSON.parse(localStorage.getItem(k)) || init);
   return [
     currValue,

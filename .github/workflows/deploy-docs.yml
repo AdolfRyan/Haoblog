@@ -64,11 +64,11 @@ jobs:
         uses: steebchen/kubectl@v2.0.0
         with: # defaults to latest kubectl binary version
           config: ${{ secrets.K8S_CONFIG_DATA }}
-          command: set image  deployment/vanblog-doc vanblog-doc=docker.io/mereith/van-blog-website:${{ steps.get_version.outputs.VERSION }}
+          command: set image  deployment/haoblog-doc haoblog-doc=docker.io/mereith/van-blog-website:${{ steps.get_version.outputs.VERSION }}
 
       - name: 等待部署生效
         run: sleep 300
 
       - name: 刷新 CDN 缓存
         run: |-
-          curl -X POST -H "Content-Type: application/json" --header 'token: ${{ secrets.CDN_REFLASH_SECRET }}'  -d '{"url":"https://vanblog.mereith.com/"}'  ${{ secrets.CDN_REFLASH_URL }}
+          curl -X POST -H "Content-Type: application/json" --header 'token: ${{ secrets.CDN_REFLASH_SECRET }}'  -d '{"url":"https://haoblog.mereith.com/"}'  ${{ secrets.CDN_REFLASH_URL }}

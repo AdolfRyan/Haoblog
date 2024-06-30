@@ -38,7 +38,7 @@ body:
     validations:
       required: true
     attributes:
-      label: 部署方式？ | How do you deploy vanblog?
+      label: 部署方式？ | How do you deploy haoblog?
       description:
       options:
         - Docker 部署(文档默认)

@@ -1,4 +1,4 @@
-import { getWalineConfig, updateWalineConfig } from '@/services/van-blog/api';
+import { getWalineConfig, updateWalineConfig } from '@/services/Haoblog/haoblog/api';
 import {
   ProForm,
   ProFormDigit,

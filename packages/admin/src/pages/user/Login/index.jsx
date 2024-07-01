@@ -1,6 +1,6 @@
 import Footer from '@/components/Footer';
-import { login } from '@/services/van-blog/api';
-import { encryptPwd } from '@/services/van-blog/encryptPwd';
+import { login } from '@/services/Haoblog/haoblog/api';
+import { encryptPwd } from '@/services/Haoblog/haoblog/encryptPwd';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { LoginForm, ProFormCheckbox, ProFormText } from '@ant-design/pro-form';
 import { message } from 'antd';

@@ -1,5 +1,5 @@
 import { ProFormSelect } from '@ant-design/pro-form';
-import { getAllCollaboratorsList } from '@/services/van-blog/api';
+import { getAllCollaboratorsList } from '@/services/Haoblog/haoblog/api';
 
 export default () => (
   <ProFormSelect

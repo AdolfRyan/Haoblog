@@ -1,4 +1,4 @@
-import { deleteTag, getTags, updateTag } from '@/services/van-blog/api';
+import { deleteTag, getTags, updateTag } from '@/services/Haoblog/haoblog/api';
 import { ModalForm, ProFormText, ProTable } from '@ant-design/pro-components';
 import { message, Modal } from 'antd';
 import { useRef } from 'react';

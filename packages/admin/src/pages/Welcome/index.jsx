@@ -1,4 +1,4 @@
-import { useTab } from '@/services/van-blog/useTab';
+import { useTab } from '@/services/Haoblog/haoblog/useTab';
 import { PageContainer } from '@ant-design/pro-layout';
 import style from './index.less';
 import Article from './tabs/article';

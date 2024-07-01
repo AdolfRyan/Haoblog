@@ -1,4 +1,4 @@
-import { deleteLink, getLink, updateLink } from '@/services/van-blog/api';
+import { deleteLink, getLink, updateLink } from '@/services/Haoblog/haoblog/api';
 import { EditableProTable } from '@ant-design/pro-components';
 import { Modal, Spin } from 'antd';
 import { useRef, useState } from 'react';

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef } from 'react';
 import { useModel } from 'umi';
-import { beforeSwitchTheme } from '../../services/van-blog/theme';
+import { beforeSwitchTheme } from '../../services/Haoblog/haoblog/theme';
 import style from './index.less';
 export default function (props: { showText: boolean }) {
   const { current } = useRef<any>({ hasInit: false });

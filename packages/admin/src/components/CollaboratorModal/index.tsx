@@ -1,5 +1,5 @@
-import { createCollaborator, updateCollaborator } from '@/services/van-blog/api';
-import { encryptPwd } from '@/services/van-blog/encryptPwd';
+import { createCollaborator, updateCollaborator } from '@/services/Haoblog/haoblog/api';
+import { encryptPwd } from '@/services/Haoblog/haoblog/encryptPwd';
 import { ModalForm, ProFormSelect, ProFormText } from '@ant-design/pro-components';
 
 // TODO: Extract this

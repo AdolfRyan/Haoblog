@@ -4,7 +4,7 @@ import {
   getLoginConfig,
   updateISRConfig,
   updateLoginConfig,
-} from '@/services/van-blog/api';
+} from '@/services/Haoblog/haoblog/api';
 import { ProForm, ProFormDigit, ProFormSelect } from '@ant-design/pro-components';
 import { Alert, Button, Card, message, Modal } from 'antd';
 import { useState } from 'react';

@@ -1,4 +1,4 @@
-import { writeClipBoardText } from '@/services/van-blog/clipboard';
+import { writeClipBoardText } from '@/services/Haoblog/haoblog/clipboard';
 import { message } from 'antd';
 import { StaticItem } from '../type';
 export const getImgLink = (realPath, autoCompleteHost = true) => {

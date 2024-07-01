@@ -1,5 +1,5 @@
 import { copyImgLink, getImgLink } from '@/pages/Static/img/tools';
-import { getClipboardContents } from '@/services/van-blog/clipboard';
+import { getClipboardContents } from '@/services/Haoblog/haoblog/clipboard';
 import { message } from 'antd';
 import { BytemdPlugin } from 'bytemd';
 export const uploadImg = async (file: File) => {

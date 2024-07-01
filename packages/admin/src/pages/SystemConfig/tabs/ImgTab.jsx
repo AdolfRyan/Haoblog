@@ -1,6 +1,6 @@
 import StaticForm from '@/components/StaticForm';
 import WatchMarkForm from '@/components/WaterMarkForm';
-import { exportAllImgs, scanImgsOfArticles } from '@/services/van-blog/api';
+import { exportAllImgs, scanImgsOfArticles } from '@/services/Haoblog/haoblog/api';
 import { Alert, Button, Card, message, Modal, Table, Typography } from 'antd';
 import { useState } from 'react';
 

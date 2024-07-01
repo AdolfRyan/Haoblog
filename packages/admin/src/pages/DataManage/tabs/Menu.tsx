@@ -1,4 +1,4 @@
-import { getMenu, updateMenu } from '@/services/van-blog/api';
+import { getMenu, updateMenu } from '@/services/Haoblog/haoblog/api';
 import { EditableProTable, useRefFunction } from '@ant-design/pro-components';
 import { message, Modal, Spin } from 'antd';
 import { useCallback, useEffect, useRef, useState } from 'react';

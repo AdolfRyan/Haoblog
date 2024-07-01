@@ -1,7 +1,7 @@
 import { ModalForm, ProFormSelect, ProFormText } from '@ant-design/pro-components';
 import { Alert, Modal } from 'antd';
 
-import { createCustomPage, updateCustomPage } from '@/services/van-blog/api';
+import { createCustomPage, updateCustomPage } from '@/services/Haoblog/haoblog/api';
 
 export default ({
   onFinish,

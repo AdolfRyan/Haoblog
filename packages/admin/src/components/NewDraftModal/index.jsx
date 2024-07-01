@@ -1,4 +1,4 @@
-import { createDraft, getAllCategories, getTags } from '@/services/van-blog/api';
+import { createDraft, getAllCategories, getTags } from '@/services/Haoblog/haoblog/api';
 import {
   ModalForm,
   ProFormDateTimePicker,

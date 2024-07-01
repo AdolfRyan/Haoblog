@@ -1,4 +1,4 @@
-import { createApiToken, getAllApiTokens, deleteApiToken } from '@/services/van-blog/api';
+import { createApiToken, getAllApiTokens, deleteApiToken } from '@/services/Haoblog/haoblog/api';
 import { ModalForm, ProFormText, ProTable } from '@ant-design/pro-components';
 import { Button, Card, message, Modal, Space, Typography } from 'antd';
 

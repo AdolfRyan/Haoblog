@@ -1,12 +1,12 @@
 // 目前出现在文章管理的列表页
 import ColumnsToolBar from '@/components/ColumnsToolBar';
 import UpdateModal from '@/components/UpdateModal';
-import { deleteArticle, getAllCategories, getArticleById, getTags } from '@/services/van-blog/api';
-import { getPathname } from '@/services/van-blog/getPathname';
-import { parseObjToMarkdown } from '@/services/van-blog/parseMarkdownFile';
+import { deleteArticle, getAllCategories, getArticleById, getTags } from '@/services/Haoblog/haoblog/api';
+import { getPathname } from '@/services/Haoblog/haoblog/getPathname';
+import { parseObjToMarkdown } from '@/services/Haoblog/haoblog/parseMarkdownFile';
 import { message, Modal, Space, Tag } from 'antd';
 import { history } from 'umi';
-import { genActiveObj } from '../../services/van-blog/activeColTools';
+import { genActiveObj } from '../../services/Haoblog/haoblog/activeColTools';
 export const columns = [
   {
     dataIndex: 'id',

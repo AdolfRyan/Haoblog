@@ -1,6 +1,6 @@
-import { checkJsonString } from '@/services/van-blog/checkJson';
+import { checkJsonString } from '@/services/Haoblog/haoblog/checkJson';
 import { ModalForm, ProFormTextArea } from '@ant-design/pro-form';
-import { triggerPipelineById } from '@/services/van-blog/api';
+import { triggerPipelineById } from '@/services/Haoblog/haoblog/api';
 import { message, Modal } from 'antd';
 
 export default function ({ pipeline, trigger }: { pipeline: any; trigger: any }) {

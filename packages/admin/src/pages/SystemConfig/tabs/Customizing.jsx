@@ -1,6 +1,6 @@
 import CodeEditor from '@/components/CodeEditor';
-import { getLayoutConfig, updateLayoutConfig } from '@/services/van-blog/api';
-import { useTab } from '@/services/van-blog/useTab';
+import { getLayoutConfig, updateLayoutConfig } from '@/services/Haoblog/haoblog/api';
+import { useTab } from '@/services/Haoblog/haoblog/useTab';
 import { Button, Card, message, Modal, Spin } from 'antd';
 import { useCallback, useEffect, useRef, useState } from 'react';
 const helpMap = {

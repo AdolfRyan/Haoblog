@@ -1,4 +1,4 @@
-import { logout } from '@/services/van-blog/api';
+import { logout } from '@/services/Haoblog/haoblog/api';
 import { message } from 'antd';
 import { history, useModel } from 'umi';
 const loginOut = async () => {

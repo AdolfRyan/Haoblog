@@ -1,6 +1,6 @@
 import SiteInfoForm from '@/components/SiteInfoForm';
-import { getSiteInfo, updateSiteInfo } from '@/services/van-blog/api';
-import { useTab } from '@/services/van-blog/useTab';
+import { getSiteInfo, updateSiteInfo } from '@/services/Haoblog/haoblog/api';
+import { useTab } from '@/services/Haoblog/haoblog/useTab';
 import { ProForm } from '@ant-design/pro-components';
 import { Card, message, Modal } from 'antd';
 export default function () {

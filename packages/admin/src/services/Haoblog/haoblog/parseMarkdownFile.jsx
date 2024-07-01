@@ -1,4 +1,4 @@
-import { getAllCategories } from '@/services/van-blog/api';
+import { getAllCategories } from '@/services/Haoblog/haoblog/api';
 import { message, Modal } from 'antd';
 import fm from 'front-matter';
 

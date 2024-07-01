@@ -136,10 +136,10 @@ export default function (props: {
             {/* 右上角搜索栏等 */}
             <div className="flex nav-action">
               <div
-                // onClick={() => {
-                //   setShowSearch(true);
-                //   document.body.style.overflow = "hidden";
-                // }}
+                onClick={() => {
+                  setShowSearch(true);
+                  document.body.style.overflow = "hidden";
+                }}
                 title="搜索"
                 className="flex group transform hover:scale-110 transition-all select-none cursor-pointer"
               >

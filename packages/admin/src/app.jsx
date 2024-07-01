@@ -7,9 +7,9 @@ import { history, Link } from 'umi';  // Link:https://v3.umijs.org/zh-CN/docs/na
 import defaultSettings from '../config/defaultSettings';
 import LogoutButton from './components/LogoutButton'; // 后台登出按钮
 import ThemeButton from './components/ThemeButton'; // 后台配色主题按钮
-import { fetchAllMeta } from './services/van-blog/api';
-import { checkUrl } from './services/van-blog/checkUrl';
-import { beforeSwitchTheme, getInitTheme, mapTheme } from './services/van-blog/theme';
+import { fetchAllMeta } from './services/Haoblog/haoblog/api';
+import { checkUrl } from './services/Haoblog/haoblog/checkUrl';
+import { beforeSwitchTheme, getInitTheme, mapTheme } from './services/Haoblog/haoblog/theme';
 const isDev = process.env.UMI_ENV === 'dev';
 const loginPath = '/user/login';
 /** 获取用户信息比较慢的时候会展示一个 loading */

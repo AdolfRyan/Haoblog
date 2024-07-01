@@ -3,8 +3,8 @@ import {
   deleteCategory,
   getAllCategories,
   updateCategory,
-} from '@/services/van-blog/api';
-import { encodeQuerystring } from '@/services/van-blog/encode';
+} from '@/services/Haoblog/haoblog/api';
+import { encodeQuerystring } from '@/services/Haoblog/haoblog/encode';
 import { PlusOutlined } from '@ant-design/icons';
 import { ModalForm, ProFormSelect, ProFormText, ProTable } from '@ant-design/pro-components';
 import { Button, message, Modal } from 'antd';

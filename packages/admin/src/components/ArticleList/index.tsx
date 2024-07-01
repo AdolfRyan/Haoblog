@@ -1,4 +1,4 @@
-import { getRecentTimeDes } from '@/services/van-blog/tool';
+import { getRecentTimeDes } from '@/services/Haoblog/haoblog/tool';
 import './index.css';
 
 export default ({

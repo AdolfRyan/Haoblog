@@ -4,7 +4,7 @@ import {
   getCaddyLog,
   getHttpsConfig,
   setHttpsConfig,
-} from '@/services/van-blog/api';
+} from '@/services/Haoblog/haoblog/api';
 import ProForm, { ProFormSwitch } from '@ant-design/pro-form';
 import { Alert, Button, Card, Input, message, Modal, Row, Space, Spin } from 'antd';
 import lodash from 'lodash';

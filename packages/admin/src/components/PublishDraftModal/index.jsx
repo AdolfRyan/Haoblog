@@ -1,4 +1,4 @@
-import { publishDraft } from '@/services/van-blog/api';
+import { publishDraft } from '@/services/Haoblog/haoblog/api';
 import { Modal, ModalForm, ProFormSelect, ProFormText } from '@ant-design/pro-components';
 import { message } from 'antd';
 export default function (props) {

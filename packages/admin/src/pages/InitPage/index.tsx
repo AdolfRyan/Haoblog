@@ -1,5 +1,5 @@
 import Footer from '@/components/Footer';
-import { fetchInit } from '@/services/van-blog/api';
+import { fetchInit } from '@/services/Haoblog/haoblog/api';
 import ProCard from '@ant-design/pro-card';
 import { ProFormInstance } from '@ant-design/pro-form';
 import { Alert, Modal } from 'antd';
@@ -10,7 +10,7 @@ import styles from './index.less';
 import { ProFormText, StepsForm } from '@ant-design/pro-components';
 
 import SiteInfoForm from '@/components/SiteInfoForm';
-import { encryptPwd } from '@/services/van-blog/encryptPwd';
+import { encryptPwd } from '@/services/Haoblog/haoblog/encryptPwd';
 import { useRef } from 'react';
 
 const InitPage = () => {

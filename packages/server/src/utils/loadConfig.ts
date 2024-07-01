@@ -7,7 +7,7 @@ let rawConfigs = [];
 if (process.env.VAN_BLOG_CONFIG_FILE) {
   rawConfigs = [path.resolve(process.env.VAN_BLOG_CONFIG_FILE)];
 } else {
-  rawConfigs = [path.resolve('/etc/van-blog/config.yaml'), path.resolve('./config.yaml')];
+  rawConfigs = [path.resolve('/etc/Haoblog/haoblog/config.yaml'), path.resolve('./config.yaml')];
 }
 
 rawConfigs = rawConfigs

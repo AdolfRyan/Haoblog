@@ -9,7 +9,7 @@ import {
   getPipelineById,
   updatePipelineById,
   getPipelineConfig,
-} from '@/services/van-blog/api'; // 引入API服务
+} from '@/services/Haoblog/haoblog/api'; // 引入API服务
 import { DownOutlined } from '@ant-design/icons'; // 引入图标
 import { PageContainer } from '@ant-design/pro-layout'; // 引入页面容器组件
 import { Button, Dropdown, Menu, message, Modal, Space, Spin, Tag, Tree } from 'antd'; // 引入Ant Design组件

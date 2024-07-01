@@ -1,6 +1,6 @@
 import { Button, message } from 'antd';
 
-import { getClipboardContents } from '@/services/van-blog/clipboard';
+import { getClipboardContents } from '@/services/Haoblog/haoblog/clipboard';
 
 export interface CopyUploadBtnProps {
   url: string;

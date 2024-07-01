@@ -6,8 +6,8 @@ import {
   deleteImgBySign,
   getImgs,
   searchArtclesByLink,
-} from '@/services/van-blog/api';
-import { useNum } from '@/services/van-blog/useNum';
+} from '@/services/Haoblog/haoblog/api';
+import { useNum } from '@/services/Haoblog/haoblog/useNum';
 import { PageContainer } from '@ant-design/pro-components';
 import { Button, Empty, Image, message, Modal, Pagination, Space, Spin, Table } from 'antd';
 import RcResizeObserver from 'rc-resize-observer';
@@ -17,7 +17,7 @@ import 'react-contexify/dist/ReactContexify.css';
 import { createPortal } from 'react-dom';
 import { history, useModel } from 'umi';
 import TipTitle from '../../../components/TipTitle';
-import { useTab } from '../../../services/van-blog/useTab';
+import { useTab } from '../../../services/Haoblog/haoblog/useTab';
 import type { StaticItem } from '../type';
 import { copyImgLink, downloadImg, getImgLink, mergeMetaInfo } from './tools';
 const MENU_ID = 'static-img';

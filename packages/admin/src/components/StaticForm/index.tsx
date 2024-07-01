@@ -1,4 +1,4 @@
-import { getStaticSetting, updateStaticSetting } from '@/services/van-blog/api';
+import { getStaticSetting, updateStaticSetting } from '@/services/Haoblog/haoblog/api';
 import { ProForm, ProFormSelect, ProFormText, ProFormTextArea } from '@ant-design/pro-components';
 import { message, Modal } from 'antd';
 import { useState } from 'react';

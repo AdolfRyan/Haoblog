@@ -2,7 +2,7 @@ import TipTitle from '@/components/TipTitle';
 import { PageContainer } from '@ant-design/pro-layout';
 import ProTable from '@ant-design/pro-table';
 import { Button, message, Modal, Space, Tag } from 'antd';
-import { getPiplelines, getPipelineConfig, deletePipelineById } from '@/services/van-blog/api';
+import { getPiplelines, getPipelineConfig, deletePipelineById } from '@/services/Haoblog/haoblog/api';
 import PipelineModal from './components/PipelineModal';
 import { useEffect, useRef, useState } from 'react';
 import { history } from 'umi';

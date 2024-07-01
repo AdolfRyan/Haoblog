@@ -1,14 +1,14 @@
 import { ProCard, StatisticCard } from '@ant-design/pro-components';
 import { Spin } from 'antd';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { getWelcomeData } from '@/services/van-blog/api';
+import { getWelcomeData } from '@/services/Haoblog/haoblog/api';
 import ArticleList from '@/components/ArticleList';
-import { getRecentTimeDes } from '@/services/van-blog/tool';
+import { getRecentTimeDes } from '@/services/Haoblog/haoblog/tool';
 import { Link } from 'umi';
 import TipTitle from '@/components/TipTitle';
 import style from '../index.less';
 import NumSelect from '@/components/NumSelect';
-import { useNum } from '@/services/van-blog/useNum';
+import { useNum } from '@/services/Haoblog/haoblog/useNum';
 import RcResizeObserver from 'rc-resize-observer';
 
 const Viewer = () => {
@@ -59,54 +59,7 @@ const Viewer = () => {
           bordered
           style={{ marginBottom: responsive ? 8 : 0 }}
         >
-          <StatisticCard
-            colSpan={responsive ? 24 : 6}
-            statistic={{
-              layout: responsive ? 'horizontal' : 'vertical',
-              title: (
-                <a
-                  href="https://tongji.baidu.com/main/homepage/"
-                  className="ua blue"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  百度统计
-                </a>
-              ),
-              formatter: () => {
-                if (data?.enableBaidu) {
-                  return <span>已开启</span>;
-                } else {
-                  return <Link to={`/admin/site/setting?siteInfoTab=more`}>未配置</Link>;
-                }
-              },
-              status: data?.enableBaidu ? 'success' : 'error',
-            }}
-          />
-          <StatisticCard
-            colSpan={responsive ? 24 : 6}
-            statistic={{
-              layout: responsive ? 'horizontal' : 'vertical',
-              title: (
-                <a
-                  href="https://analytics.google.com/analytics/web/"
-                  className="ua blue"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  谷歌分析
-                </a>
-              ),
-              formatter: () => {
-                if (data?.enableGA) {
-                  return <span>已开启</span>;
-                } else {
-                  return <Link to={`/admin/site/setting?siteInfoTab=more`}>未配置</Link>;
-                }
-              },
-              status: data?.enableGA ? 'success' : 'error',
-            }}
-          />
+
           <StatisticCard
             colSpan={responsive ? 24 : 6}
             statistic={{

@@ -1,5 +1,5 @@
-import { restore } from '@/services/van-blog/api';
-import { encryptPwd } from '@/services/van-blog/encryptPwd';
+import { restore } from '@/services/Haoblog/haoblog/api';
+import { encryptPwd } from '@/services/Haoblog/haoblog/encryptPwd';
 import ProCard from '@ant-design/pro-card';
 import ProForm, { ProFormText } from '@ant-design/pro-form';
 import { Alert, message } from 'antd';

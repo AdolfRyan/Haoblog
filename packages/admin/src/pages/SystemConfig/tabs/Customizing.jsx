@@ -65,14 +65,7 @@ export default function () {
       title: '帮助',
       content: (
         <div>
-          <p>{helpMap[tab]}</p>
-          <a
-            target="_blank"
-            href=""
-            rel="noreferrer"
-          >
-            帮助文档
-          </a>
+
         </div>
       ),
     });

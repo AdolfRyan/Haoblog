@@ -25,13 +25,7 @@ const InitPage = () => {
           title={
             <div>
               <p style={{ fontSize: 20, marginBottom: 0 }}>欢迎使用haoBlog 个人博客系统</p>
-              <a
-                target={'_blank'}
-                rel="noreferrer"
-                href=" "
-              >
-                帮助文档
-              </a>
+
             </div>
           }
         >

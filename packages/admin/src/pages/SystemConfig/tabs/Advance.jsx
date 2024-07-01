@@ -73,11 +73,8 @@ export default function (props) {
           type="info"
           message={
             <a
-              rel="noreferrer"
-              target="_blank"
-              href=""
+
             >
-              帮助文档
             </a>
           }
           style={{ marginBottom: 8 }}

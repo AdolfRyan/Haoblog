@@ -53,7 +53,7 @@ const Login = () => {
       <div className={styles.content}>
         <LoginForm
           className={styles.loginForm}
-          logo={<img alt="logo" src="/crab.svg" />}
+          logo={<img alt="logo" src="/Xie Lao Ban.svg" />}
           title="HaoBlog"
           subTitle={'HaoBlog 博客管理后台'}
           initialValues={{

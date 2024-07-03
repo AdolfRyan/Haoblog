@@ -3,7 +3,7 @@
     ask http://127.0.0.1:3000/api/admin/caddy/ask
   }
   admin 0.0.0.0:2019
-  email VAN_BLOG_EMAIL
+  email HAO_BLOG_EMAIL
 	log {
 		output file /var/log/caddy.log
 	}

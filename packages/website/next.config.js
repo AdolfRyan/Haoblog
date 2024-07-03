@@ -22,7 +22,7 @@ const rewites =
     : {};
 
 const getAllowDomains = () => {
-  const domainsInEnv = process.env.VAN_BLOG_ALLOW_DOMAINS || "";
+  const domainsInEnv = process.env.HAO_BLOG_ALLOW_DOMAINS || "";
   if (domainsInEnv && domainsInEnv != "") {
     const arr = domainsInEnv.split(",");
     return arr;
@@ -37,7 +37,7 @@ const getCdnUrl = () => {
   if (isDev) {
     return {};
   }
-  const UrlInEnv = process.env.VAN_BLOG_CDN_URL || "";
+  const UrlInEnv = process.env.HAO_BLOG_CDN_URL || "";
   if (UrlInEnv && UrlInEnv != "") {
     return { assetPrefix: UrlInEnv };
   } else {

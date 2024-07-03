@@ -17,7 +17,7 @@ export class InitMiddleware implements NestMiddleware {
           statusCode: 233,
           message: '未初始化!',
           data: {
-            allowDomains: process.env.VAN_BLOG_ALLOW_DOMAINS || '',
+            allowDomains: process.env.HAO_BLOG_ALLOW_DOMAINS || '',
           },
         });
       }

@@ -131,7 +131,7 @@ export interface PublicMetaProp {
   };
 }
 
-export const version = process.env["VAN_BLOG_VERSION"] || "dev";
+export const version = process.env["HAO_BLOG_VERSION"] || "dev";
 
 const defaultMeta: MetaProps = {
   categories: [],

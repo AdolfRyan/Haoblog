@@ -42,8 +42,8 @@ jobs:
           context: .
           file: ./Dockerfile
           build-args: |
-            VAN_BLOG_BUILD_SERVER=http://localhost:3000
-            VAN_BLOG_VERSIONS=test-${{ steps.get_version.outputs.VERSION }}
+            HAO_BLOG_BUILD_SERVER=http://localhost:3000
+            HAO_BLOG_VERSIONS=test-${{ steps.get_version.outputs.VERSION }}
           platforms: linux/amd64
           push: true
           tags: |
